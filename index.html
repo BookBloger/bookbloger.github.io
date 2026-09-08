@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>معرفی و رتبه‌بندی برترین بوک‌بلاگرهای اینستاگرام | BookBloger</title>
-    <meta name="description" content="رتبه‌بندی و دایرکتوری جامع بوک‌بلاگرهای ایرانی در اینستاگرام جمع‌آوری‌شده توسط ریک سانچز به همراه اجرای کمپین‌های تبلیغاتی و روابط عمومی کتاب">
+    <meta name="description" content="رتبه‌بندی و دایرکتوری جامع بوک‌بلاگرهای ایرانی در اینستاگرام با بیش از ۶۰۰ هزار مخاطب فعال کتاب، جمع‌آوری‌شده توسط ریک سانچز">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -194,32 +194,43 @@
             transform: translateY(-2px);
         }
 
+        /* Enhanced Stats Banner */
         .stats-banner {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            max-width: 600px;
+            max-width: 820px;
             margin: 0 auto 30px;
         }
 
         .stat-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 12px 10px;
-            border-radius: 12px;
+            padding: 14px 10px;
+            border-radius: 14px;
             text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.4);
         }
 
         .stat-box .num {
             font-size: clamp(18px, 4vw, 24px);
-            font-weight: 800;
+            font-weight: 900;
             color: #38bdf8;
         }
 
+        .stat-box.highlight-box .num {
+            color: #fbbf24;
+        }
+
         .stat-box .label {
-            font-size: 11px;
+            font-size: 11.5px;
             color: var(--text-secondary);
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         .controls {
@@ -444,6 +455,12 @@
         }
 
         /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .stats-banner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 640px) {
             body {
                 padding: 20px 12px 40px;
@@ -497,9 +514,10 @@
             }
             .stats-banner {
                 gap: 8px;
+                grid-template-columns: repeat(2, 1fr);
             }
             .stat-box {
-                padding: 8px 4px;
+                padding: 10px 6px;
             }
         }
     </style>
@@ -518,7 +536,7 @@
         <div class="campaign-badge">🚀 اجرای کمپین و روابط عمومی کتاب</div>
         <h2 class="campaign-title">طراحی و اجرای کمپین‌های تخصصی با بوک‌بلاگرها</h2>
         <p class="campaign-desc">
-            برای اجرای کمپین‌های تبلیغاتی، رونمایی و نقد کتاب، اسپانسرشیپ و همکاری هدفمند با بلاگرهای برتر این لیست، هماهنگی و مدیریت اختصاصی کمپین‌ها را می‌توانید به <b>ریک سانچز</b> بسپارید.
+            برای اجرای کمپین‌های تبلیغاتی، رونمایی و نقد کتاب، اسپانسرشیپ و همکاری هدفمند با بیش از <b>۶۰۰ هزار مخاطب کتاب‌خوان</b> این لیست، هماهنگی و مدیریت اختصاصی کمپین‌ها را می‌توانید به <b>ریک سانچز</b> بسپارید.
         </p>
         <div class="contact-buttons">
             <a href="https://t.me/m4tinbeigipv" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-tg">
@@ -536,18 +554,23 @@
         </div>
     </div>
 
+    <!-- Stats Banner with Total Reach -->
     <div class="stats-banner">
+        <div class="stat-box highlight-box">
+            <div class="num">611K+</div>
+            <div class="label">مجموع کل فالوورها (611,126)</div>
+        </div>
         <div class="stat-box">
             <div class="num">38</div>
             <div class="label">تعداد کل پیج‌ها</div>
         </div>
         <div class="stat-box">
             <div class="num">83K</div>
-            <div class="label">بیشترین فالوور</div>
+            <div class="label">بیشترین فالوور پیج</div>
         </div>
         <div class="stat-box">
-            <div class="num">۱۰۰٪</div>
-            <div class="label">پروفایل تأییدشده</div>
+            <div class="num">5,640</div>
+            <div class="label">مجموع محتوا و پست‌ها</div>
         </div>
     </div>
 
@@ -556,7 +579,7 @@
     </div>
 
     <div class="grid" id="bloggersGrid">
-        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer" data-followers="83000.0">
+        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer" data-followers="83000.0" data-posts="392.0">
             <div class="rank-badge rank-1">🥇 رتبه ۱</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -596,7 +619,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi" data-followers="66000.0">
+        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi" data-followers="66000.0" data-posts="48.0">
             <div class="rank-badge rank-2">🥈 رتبه ۲</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -636,7 +659,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بوک اسپوک | Book Spook book_spook" data-followers="64000.0">
+        <div class="card" data-name="بوک اسپوک | Book Spook book_spook" data-followers="64000.0" data-posts="229.0">
             <div class="rank-badge rank-3">🥉 رتبه ۳</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -676,7 +699,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian" data-followers="48000.0">
+        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian" data-followers="48000.0" data-posts="159.0">
             <div class="rank-badge">#4</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -716,7 +739,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir" data-followers="43000.0">
+        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir" data-followers="43000.0" data-posts="209.0">
             <div class="rank-badge">#5</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -756,7 +779,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary" data-followers="34000.0">
+        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary" data-followers="34000.0" data-posts="87.0">
             <div class="rank-badge">#6</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -796,7 +819,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book" data-followers="29000.0">
+        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book" data-followers="29000.0" data-posts="364.0">
             <div class="rank-badge">#7</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -836,7 +859,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook" data-followers="28000.0">
+        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook" data-followers="28000.0" data-posts="64.0">
             <div class="rank-badge">#8</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -876,7 +899,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad" data-followers="21000.0">
+        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad" data-followers="21000.0" data-posts="162.0">
             <div class="rank-badge">#9</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -916,7 +939,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book" data-followers="21000.0">
+        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book" data-followers="21000.0" data-posts="390.0">
             <div class="rank-badge">#10</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -956,7 +979,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پرناز بهزاد | سرگردان میان خیال و نوشتن sinmoruk" data-followers="20000.0">
+        <div class="card" data-name="پرناز بهزاد | سرگردان میان خیال و نوشتن sinmoruk" data-followers="20000.0" data-posts="280.0">
             <div class="rank-badge">#11</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -996,7 +1019,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سـاقـی🌝 saghaaal" data-followers="17000.0">
+        <div class="card" data-name="سـاقـی🌝 saghaaal" data-followers="17000.0" data-posts="181.0">
             <div class="rank-badge">#12</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1036,7 +1059,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="Saba Samadi sabasamaadi" data-followers="16000.0">
+        <div class="card" data-name="Saba Samadi sabasamaadi" data-followers="16000.0" data-posts="187.0">
             <div class="rank-badge">#13</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1076,7 +1099,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri" data-followers="14000.0">
+        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri" data-followers="14000.0" data-posts="148.0">
             <div class="rank-badge">#14</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1116,7 +1139,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika" data-followers="10000.0">
+        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika" data-followers="10000.0" data-posts="216.0">
             <div class="rank-badge">#15</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1156,7 +1179,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox" data-followers="9487.0">
+        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox" data-followers="9487.0" data-posts="94.0">
             <div class="rank-badge">#16</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1196,7 +1219,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کیانا | معرفی کتاب kiana_am" data-followers="8848.0">
+        <div class="card" data-name="کیانا | معرفی کتاب kiana_am" data-followers="8848.0" data-posts="221.0">
             <div class="rank-badge">#17</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1236,7 +1259,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بهار|کتاب booksbahar" data-followers="8459.0">
+        <div class="card" data-name="بهار|کتاب booksbahar" data-followers="8459.0" data-posts="41.0">
             <div class="rank-badge">#18</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1276,7 +1299,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi" data-followers="8254.0">
+        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi" data-followers="8254.0" data-posts="92.0">
             <div class="rank-badge">#19</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1316,7 +1339,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland" data-followers="7414.0">
+        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland" data-followers="7414.0" data-posts="58.0">
             <div class="rank-badge">#20</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1356,7 +1379,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi" data-followers="7182.0">
+        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi" data-followers="7182.0" data-posts="52.0">
             <div class="rank-badge">#21</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1396,7 +1419,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak" data-followers="4809.0">
+        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak" data-followers="4809.0" data-posts="64.0">
             <div class="rank-badge">#22</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1436,7 +1459,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall" data-followers="4769.0">
+        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall" data-followers="4769.0" data-posts="111.0">
             <div class="rank-badge">#23</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1476,7 +1499,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover" data-followers="4473.0">
+        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover" data-followers="4473.0" data-posts="78.0">
             <div class="rank-badge">#24</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1516,7 +1539,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism" data-followers="4247.0">
+        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism" data-followers="4247.0" data-posts="269.0">
             <div class="rank-badge">#25</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1556,7 +1579,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="نگین negin_books" data-followers="4129.0">
+        <div class="card" data-name="نگین negin_books" data-followers="4129.0" data-posts="116.0">
             <div class="rank-badge">#26</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1596,7 +1619,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads" data-followers="3823.0">
+        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads" data-followers="3823.0" data-posts="325.0">
             <div class="rank-badge">#27</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1636,7 +1659,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books" data-followers="3816.0">
+        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books" data-followers="3816.0" data-posts="124.0">
             <div class="rank-badge">#28</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1676,7 +1699,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm" data-followers="3426.0">
+        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm" data-followers="3426.0" data-posts="144.0">
             <div class="rank-badge">#29</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1716,7 +1739,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa" data-followers="2739.0">
+        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa" data-followers="2739.0" data-posts="25.0">
             <div class="rank-badge">#30</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1756,7 +1779,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="MINA(book blogger)📚 mina.bookk" data-followers="2544.0">
+        <div class="card" data-name="MINA(book blogger)📚 mina.bookk" data-followers="2544.0" data-posts="305.0">
             <div class="rank-badge">#31</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1796,7 +1819,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads" data-followers="2119.0">
+        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads" data-followers="2119.0" data-posts="30.0">
             <div class="rank-badge">#32</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1836,7 +1859,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_" data-followers="1556.0">
+        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_" data-followers="1556.0" data-posts="136.0">
             <div class="rank-badge">#33</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1876,7 +1899,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab" data-followers="1474.0">
+        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab" data-followers="1474.0" data-posts="52.0">
             <div class="rank-badge">#34</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1916,7 +1939,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan" data-followers="1424.0">
+        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan" data-followers="1424.0" data-posts="72.0">
             <div class="rank-badge">#35</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1956,7 +1979,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گِرین💚 greenverse.book" data-followers="1355.0">
+        <div class="card" data-name="گِرین💚 greenverse.book" data-followers="1355.0" data-posts="53.0">
             <div class="rank-badge">#36</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1996,7 +2019,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art" data-followers="648.0">
+        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art" data-followers="648.0" data-posts="47.0">
             <div class="rank-badge">#37</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2036,7 +2059,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="neginbook negin_book" data-followers="131.0">
+        <div class="card" data-name="neginbook negin_book" data-followers="131.0" data-posts="15.0">
             <div class="rank-badge">#38</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2079,7 +2102,7 @@
     </div>
 
     <footer>
-        <p>گردآوری و توسعه: <span class="footer-curator">ریک سانچز (Rick Sanchez)</span></p>
+        <p>گردآوری، تحلیل داده و توسعه: <span class="footer-curator">ریک سانچز (Rick Sanchez)</span></p>
         <p style="margin-top:6px;">منتشر شده بر روی <b>GitHub Pages</b>: <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a></p>
     </footer>
 </div>
