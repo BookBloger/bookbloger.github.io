@@ -2,9 +2,9 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرفی و دایرکتوری برترین بوک‌بلاگرهای فارسی اینستاگرام | BookBloger</title>
-    <meta name="description" content="فهرست جامع و تحلیل آماری بوک‌بلاگرهای ایرانی در اینستاگرام همراه با آمار دقیق فالوورها، پست‌ها و لینک‌های آنالیز تخصصی">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>معرفی و رتبه‌بندی برترین بوک‌بلاگرهای اینستاگرام | BookBloger</title>
+    <meta name="description" content="رتبه‌بندی و دایرکتوری جامع بوک‌بلاگرهای ایرانی در اینستاگرام مرتب‌شده بر اساس بیشترین تعداد فالوور به همراه آمار دقیق و تحلیل پیج‌ها">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,14 +12,15 @@
         :root {
             --bg-color: #0b0f19;
             --card-bg: #151d30;
-            --card-hover: #1c2742;
+            --card-hover: #1b2640;
             --accent: #6366f1;
             --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --border: #23304e;
-            --badge-foll: #fbbf24;
-            --badge-post: #38bdf8;
+            --gold: #f59e0b;
+            --silver: #94a3b8;
+            --bronze: #b45309;
         }
 
         * {
@@ -27,6 +28,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -34,7 +36,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 30px 16px 60px;
         }
 
         .container {
@@ -44,16 +46,17 @@
 
         header {
             text-align: center;
-            margin-bottom: 45px;
-            position: relative;
+            margin-bottom: 35px;
         }
 
         .hero-badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99, 102, 241, 0.12);
             color: #818cf8;
             border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 6px 18px;
+            padding: 6px 16px;
             border-radius: 9999px;
             font-size: 13px;
             font-weight: 600;
@@ -61,59 +64,64 @@
         }
 
         h1 {
-            font-size: 34px;
-            font-weight: 800;
+            font-size: clamp(22px, 5vw, 36px);
+            font-weight: 900;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         p.subtitle {
             color: var(--text-secondary);
-            font-size: 16px;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: clamp(13px, 3.5vw, 16px);
+            max-width: 680px;
+            margin: 0 auto 25px;
+            padding: 0 10px;
         }
 
         .stats-banner {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto 30px;
         }
 
         .stat-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 14px 28px;
+            padding: 12px 10px;
             border-radius: 12px;
             text-align: center;
         }
 
         .stat-box .num {
-            font-size: 24px;
+            font-size: clamp(18px, 4vw, 24px);
             font-weight: 800;
             color: #38bdf8;
         }
 
         .stat-box .label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-secondary);
+            margin-top: 2px;
         }
 
-        .search-bar {
-            margin-bottom: 30px;
+        .controls {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
         .search-input {
             width: 100%;
-            max-width: 500px;
-            padding: 14px 20px;
-            border-radius: 12px;
+            max-width: 480px;
+            padding: 14px 18px;
+            border-radius: 14px;
             border: 1px solid var(--border);
             background: var(--card-bg);
             color: #fff;
@@ -129,41 +137,73 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 22px;
-            transition: all 0.3s ease;
+            padding: 20px;
+            transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             background: var(--card-hover);
             border-color: #3b82f6;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(30, 41, 59, 0.9);
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            border: 1px solid #334155;
+            direction: ltr;
+        }
+
+        .rank-1 {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.35));
+            color: #fde047;
+            border-color: #f59e0b;
+        }
+
+        .rank-2 {
+            background: linear-gradient(135deg, rgba(148, 163, 184, 0.25), rgba(100, 116, 139, 0.35));
+            color: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        .rank-3 {
+            background: linear-gradient(135deg, rgba(180, 83, 9, 0.25), rgba(146, 64, 14, 0.35));
+            color: #fdba74;
+            border-color: #b45309;
         }
 
         .card-top {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             margin-bottom: 16px;
+            padding-left: 55px;
         }
 
         .avatar-wrap {
             position: relative;
-            width: 68px;
-            height: 68px;
+            width: 60px;
+            height: 60px;
             flex-shrink: 0;
         }
 
@@ -176,12 +216,19 @@
             background: #0f172a;
         }
 
+        .info {
+            overflow: hidden;
+        }
+
         .info h3 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #f8fafc;
             line-height: 1.4;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .info .handle {
@@ -190,24 +237,35 @@
             direction: ltr;
             display: inline-block;
             font-weight: 500;
+            text-decoration: none;
+        }
+
+        .info .handle:hover {
+            text-decoration: underline;
         }
 
         .metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 6px;
             background: rgba(11, 15, 25, 0.6);
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 18px;
+            padding: 10px;
+            border-radius: 12px;
+            margin-bottom: 16px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .metric-item .val {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .metric-item .val.highlight {
             color: #fbbf24;
+            font-size: 15px;
+            font-weight: 800;
         }
 
         .metric-item .lbl {
@@ -217,23 +275,23 @@
         }
 
         .card-actions {
-            display: flex;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
         }
 
         .btn {
-            flex: 1;
-            padding: 9px 12px;
+            padding: 9px 10px;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             text-align: center;
             text-decoration: none;
             transition: all 0.2s;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .btn-ig {
@@ -242,1230 +300,125 @@
         }
 
         .btn-ig:hover {
-            opacity: 0.9;
+            opacity: 0.92;
             transform: scale(1.02);
         }
 
-        .btn-coco {
+        .btn-analytics {
             background: #1e293b;
             color: #38bdf8;
             border: 1px solid #334155;
         }
 
-        .btn-coco:hover {
+        .btn-analytics:hover {
             background: #334155;
             color: #fff;
             transform: scale(1.02);
         }
 
         footer {
-            margin-top: 60px;
+            margin-top: 50px;
             text-align: center;
             padding-top: 25px;
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             font-size: 13px;
         }
+
+        /* Mobile Optimization */
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px 40px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .card {
+                padding: 16px;
+            }
+            .card-top {
+                gap: 12px;
+                padding-left: 50px;
+                margin-bottom: 12px;
+            }
+            .avatar-wrap {
+                width: 52px;
+                height: 52px;
+            }
+            .info h3 {
+                font-size: 14px;
+            }
+            .info .handle {
+                font-size: 12px;
+            }
+            .metrics {
+                padding: 8px;
+                margin-bottom: 12px;
+            }
+            .metric-item .val {
+                font-size: 13px;
+            }
+            .metric-item .lbl {
+                font-size: 10px;
+            }
+            .btn {
+                padding: 8px;
+                font-size: 12px;
+            }
+            .stats-banner {
+                gap: 8px;
+            }
+            .stat-box {
+                padding: 8px 4px;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <header>
-        <div class="hero-badge">✨ بانک رسمی و تحلیلی بلاگرهای کتاب</div>
-        <h1>دایرکتوری جامع بوک‌بلاگرهای اینستاگرام</h1>
-        <p class="subtitle">مرجع کامل دسترسی، بررسی و مشاهده داده‌های آماری و تحلیلی بلاگرهای برتر کتاب فارسی‌زبان</p>
+        <div class="hero-badge">📊 مرتب‌شده بر اساس بیشترین فالوور</div>
+        <h1>رتبه‌بندی جامع بوک‌بلاگرهای اینستاگرام</h1>
+        <p class="subtitle">فهرست کامل و رتبه‌بندی دقیق بوک‌بلاگرهای برتر ایرانی به همراه آمار دقیق و تحلیل پیج‌ها</p>
         
         <div class="stats-banner">
             <div class="stat-box">
                 <div class="num">38</div>
-                <div class="label">پیج بوک‌بلاگر ثبت‌شده</div>
+                <div class="label">تعداد کل پیج‌ها</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">83K</div>
+                <div class="label">بیشترین فالوور</div>
             </div>
             <div class="stat-box">
                 <div class="num">۱۰۰٪</div>
-                <div class="label">پروفایل‌های تأییدشده</div>
-            </div>
-            <div class="stat-box">
-                <div class="num">Coco.gl</div>
-                <div class="label">هوش تحلیلی متصل</div>
+                <div class="label">پروفایل تأییدشده</div>
             </div>
         </div>
 
-        <div class="search-bar">
-            <input type="text" id="searchInput" class="search-input" placeholder="جستجو بر اساس نام یا آیدی اینستاگرام...">
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 جستجو بر اساس نام یا آیدی بلاگر...">
         </div>
     </header>
 
     <div class="grid" id="bloggersGrid">
-        <div class="card" data-name="MINA(book blogger)📚 mina.bookk">
-            <div>
+        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer" data-followers="83000.0">
+            <div class="rank-badge rank-1">🥇 رتبه ۱</div>
+            <div class="card-main-content">
                 <div class="card-top">
                     <div class="avatar-wrap">
-                        <img src="avatars/mina.bookk.jpg" alt="@mina.bookk" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=mina.bookk&background=random'">
+                        <img src="avatars/baharthebookreviewer.jpg" alt="@baharthebookreviewer" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=baharthebookreviewer&background=random'">
                     </div>
                     <div class="info">
-                        <h3>MINA(book blogger)📚</h3>
-                        <a href="https://instagram.com/mina.bookk" target="_blank" class="handle">@mina.bookk</a>
+                        <h3 title="بهار میرترابی | Bahar Reviews">بهار میرترابی | Bahar Reviews</h3>
+                        <a href="https://instagram.com/baharthebookreviewer" target="_blank" rel="noopener noreferrer" class="handle">@baharthebookreviewer</a>
                     </div>
                 </div>
 
                 <div class="metrics">
                     <div class="metric-item">
-                        <div class="val">2,544</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">739</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">305</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/mina.bookk" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/67745728345?username=mina.bookk" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/pariaareads.jpg" alt="@pariaareads" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=pariaareads&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>پریا|بلاگر کتاب|کتاب فروشی آنلاین</h3>
-                        <a href="https://instagram.com/pariaareads" target="_blank" class="handle">@pariaareads</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">3,823</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">1,001</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">325</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/pariaareads" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/31333263899?username=pariaareads" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/storyteller.shahrzad.jpg" alt="@storyteller.shahrzad" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=storyteller.shahrzad&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>شهرزاد داودی / بلاگر کتاب</h3>
-                        <a href="https://instagram.com/storyteller.shahrzad" target="_blank" class="handle">@storyteller.shahrzad</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">21K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">325</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">162</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/storyteller.shahrzad" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4566759752?username=storyteller.shahrzad" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="سـاقـی🌝 saghaaal">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/saghaaal.jpg" alt="@saghaaal" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=saghaaal&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>سـاقـی🌝</h3>
-                        <a href="https://instagram.com/saghaaal" target="_blank" class="handle">@saghaaal</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">17K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">416</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">181</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/saghaaal" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8247074757?username=saghaaal" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/artadall.jpg" alt="@artadall" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=artadall&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>آرتادال•کتابخوان •راوی کتاب</h3>
-                        <a href="https://instagram.com/artadall" target="_blank" class="handle">@artadall</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">4,769</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">618</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">111</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/artadall" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/57728595825?username=artadall" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/dreems_book.jpg" alt="@dreems_book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=dreems_book&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |</h3>
-                        <a href="https://instagram.com/dreems_book" target="_blank" class="handle">@dreems_book</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">21K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">340</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">390</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/dreems_book" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54663029267?username=dreems_book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/saman.reads.jpg" alt="@saman.reads" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=saman.reads&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>سامان|معرفی کتاب و فیلم</h3>
-                        <a href="https://instagram.com/saman.reads" target="_blank" class="handle">@saman.reads</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">2,119</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">219</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">30</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/saman.reads" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/63934830833?username=saman.reads" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/acal.madahi.jpg" alt="@acal.madahi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=acal.madahi&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>عسل | معرفی کتاب | پادکست | جستجوگر</h3>
-                        <a href="https://instagram.com/acal.madahi" target="_blank" class="handle">@acal.madahi</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">66K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">1,061</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">48</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/acal.madahi" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/61899237612?username=acal.madahi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="پرناز بهزاد | سرگردان میان خیال و نوشتن sinmoruk">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/sinmoruk.jpg" alt="@sinmoruk" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sinmoruk&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>پرناز بهزاد | سرگردان میان خیال و نوشتن</h3>
-                        <a href="https://instagram.com/sinmoruk" target="_blank" class="handle">@sinmoruk</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">20K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">942</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">280</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/sinmoruk" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54089369041?username=sinmoruk" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/tootfarangi._.book.jpg" alt="@tootfarangi._.book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=tootfarangi._.book&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>بوک بلاگر|بلاگر کتاب|توت فرنگی</h3>
-                        <a href="https://instagram.com/tootfarangi._.book" target="_blank" class="handle">@tootfarangi._.book</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">29K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">443</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">364</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/tootfarangi._.book" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49309827208?username=tootfarangi._.book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/imnon.aa.jpg" alt="@imnon.aa" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=imnon.aa&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>݊ꪀ𝑜ꪀ𝑎˖ ݁˖</h3>
-                        <a href="https://instagram.com/imnon.aa" target="_blank" class="handle">@imnon.aa</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">2,739</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">321</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">25</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/imnon.aa" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77897372107?username=imnon.aa" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/roxanaabasian.jpg" alt="@roxanaabasian" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=roxanaabasian&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>رکسانا|معرفی کتاب|گروه کتاب‌خوانی</h3>
-                        <a href="https://instagram.com/roxanaabasian" target="_blank" class="handle">@roxanaabasian</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">48K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">496</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">159</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/roxanaabasian" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/50721683859?username=roxanaabasian" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/sarabooks.ir.jpg" alt="@sarabooks.ir" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sarabooks.ir&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>سارا هوشمند | مروّج کتاب</h3>
-                        <a href="https://instagram.com/sarabooks.ir" target="_blank" class="handle">@sarabooks.ir</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">43K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">1,018</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">209</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/sarabooks.ir" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54261538627?username=sarabooks.ir" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/_cherryremi.jpg" alt="@_cherryremi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=_cherryremi&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>گیلاس خانم🍒|معرفی کتاب</h3>
-                        <a href="https://instagram.com/_cherryremi" target="_blank" class="handle">@_cherryremi</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">7,182</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">246</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">52</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/_cherryremi" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/72428977338?username=_cherryremi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="نگین negin_books">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/negin_books.jpg" alt="@negin_books" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negin_books&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>نگین</h3>
-                        <a href="https://instagram.com/negin_books" target="_blank" class="handle">@negin_books</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">4,129</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">193</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">116</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/negin_books" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/48380758957?username=negin_books" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/totfarangii_ketab.jpg" alt="@totfarangii_ketab" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=totfarangii_ketab&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد</h3>
-                        <a href="https://instagram.com/totfarangii_ketab" target="_blank" class="handle">@totfarangii_ketab</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">1,474</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">526</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">52</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/totfarangii_ketab" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54136633599?username=totfarangii_ketab" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/negarankarimi.jpg" alt="@negarankarimi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negarankarimi&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد</h3>
-                        <a href="https://instagram.com/negarankarimi" target="_blank" class="handle">@negarankarimi</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">8,254</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">541</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">92</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/negarankarimi" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/16575498128?username=negarankarimi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/lilith.in.wonderland.jpg" alt="@lilith.in.wonderland" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=lilith.in.wonderland&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>صدام کن لیلیث</h3>
-                        <a href="https://instagram.com/lilith.in.wonderland" target="_blank" class="handle">@lilith.in.wonderland</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">7,414</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">62</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">58</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/lilith.in.wonderland" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/70436047304?username=lilith.in.wonderland" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/mozhdeh_booklover.jpg" alt="@mozhdeh_booklover" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=mozhdeh_booklover&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>Mozhdeh | مژده</h3>
-                        <a href="https://instagram.com/mozhdeh_booklover" target="_blank" class="handle">@mozhdeh_booklover</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">4,473</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">569</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">78</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/mozhdeh_booklover" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4272877791?username=mozhdeh_booklover" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/misaghsdiary.jpg" alt="@misaghsdiary" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=misaghsdiary&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>مروج کتاب  | میثاق</h3>
-                        <a href="https://instagram.com/misaghsdiary" target="_blank" class="handle">@misaghsdiary</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">34K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">424</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">87</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/misaghsdiary" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/53430309024?username=misaghsdiary" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="Saba Samadi sabasamaadi">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/sabasamaadi.jpg" alt="@sabasamaadi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sabasamaadi&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>Saba Samadi</h3>
-                        <a href="https://instagram.com/sabasamaadi" target="_blank" class="handle">@sabasamaadi</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">16K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">323</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">187</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/sabasamaadi" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/65873377233?username=sabasamaadi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="کیانا | معرفی کتاب kiana_am">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/kiana_am.jpg" alt="@kiana_am" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=kiana_am&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>کیانا | معرفی کتاب</h3>
-                        <a href="https://instagram.com/kiana_am" target="_blank" class="handle">@kiana_am</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">8,848</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">927</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">221</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/kiana_am" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/3271735228?username=kiana_am" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="بوک اسپوک | Book Spook book_spook">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/book_spook.jpg" alt="@book_spook" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=book_spook&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>بوک اسپوک | Book Spook</h3>
-                        <a href="https://instagram.com/book_spook" target="_blank" class="handle">@book_spook</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">64K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">608</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">229</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/book_spook" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/58763326336?username=book_spook" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/artemisbook.jpg" alt="@artemisbook" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=artemisbook&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>گلاره یوسفی | مروّج کتاب📚</h3>
-                        <a href="https://instagram.com/artemisbook" target="_blank" class="handle">@artemisbook</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">28K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">371</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">64</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/artemisbook" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/51728600771?username=artemisbook" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/coralism.jpg" alt="@coralism" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=coralism&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>[ معرفی کتاب با کُرالیسم ]</h3>
-                        <a href="https://instagram.com/coralism" target="_blank" class="handle">@coralism</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">4,247</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">755</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">269</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/coralism" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/47149265245?username=coralism" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/bookish_melika.jpg" alt="@bookish_melika" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=bookish_melika&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>ملیکا|معرفی کتاب</h3>
-                        <a href="https://instagram.com/bookish_melika" target="_blank" class="handle">@bookish_melika</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">10K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">382</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">216</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/bookish_melika" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/59224971552?username=bookish_melika" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/nooshinaseri.jpg" alt="@nooshinaseri" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=nooshinaseri&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>جادوگر فانتزی | نوشین ناصری</h3>
-                        <a href="https://instagram.com/nooshinaseri" target="_blank" class="handle">@nooshinaseri</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">14K</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">1,251</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">148</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/nooshinaseri" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8149026928?username=nooshinaseri" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="neginbook negin_book">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/negin_book.jpg" alt="@negin_book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negin_book&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>neginbook</h3>
-                        <a href="https://instagram.com/negin_book" target="_blank" class="handle">@negin_book</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">131</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">770</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">15</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/negin_book" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/46014025981?username=negin_book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/ziiboox.jpg" alt="@ziiboox" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ziiboox&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>زیبوکس | بلاگر کتاب📚</h3>
-                        <a href="https://instagram.com/ziiboox" target="_blank" class="handle">@ziiboox</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">9,487</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">412</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">94</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/ziiboox" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/71244256969?username=ziiboox" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/about_dokhtarjan.jpg" alt="@about_dokhtarjan" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=about_dokhtarjan&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>دخترجان | کتاب | روزمرگی</h3>
-                        <a href="https://instagram.com/about_dokhtarjan" target="_blank" class="handle">@about_dokhtarjan</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">1,424</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">251</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">72</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/about_dokhtarjan" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/38819979162?username=about_dokhtarjan" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/joi_boy_art.jpg" alt="@joi_boy_art" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=joi_boy_art&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>جوی بوی | معرفی کتاب | یوتوبر</h3>
-                        <a href="https://instagram.com/joi_boy_art" target="_blank" class="handle">@joi_boy_art</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">648</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">685</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">47</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/joi_boy_art" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/66123199249?username=joi_boy_art" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="بهار|کتاب booksbahar">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/booksbahar.jpg" alt="@booksbahar" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=booksbahar&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>بهار|کتاب</h3>
-                        <a href="https://instagram.com/booksbahar" target="_blank" class="handle">@booksbahar</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">8,459</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">273</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">41</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/booksbahar" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77249092268?username=booksbahar" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="گِرین💚 greenverse.book">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/greenverse.book.jpg" alt="@greenverse.book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=greenverse.book&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>گِرین💚</h3>
-                        <a href="https://instagram.com/greenverse.book" target="_blank" class="handle">@greenverse.book</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">1,355</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">247</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">53</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/greenverse.book" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77780480331?username=greenverse.book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/fa_bookworm.jpg" alt="@fa_bookworm" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=fa_bookworm&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>فاطمه ام | معرفی کتاب|روزمرگی</h3>
-                        <a href="https://instagram.com/fa_bookworm" target="_blank" class="handle">@fa_bookworm</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">3,426</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">716</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">144</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/fa_bookworm" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49978730279?username=fa_bookworm" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/zahrabook_.jpg" alt="@zahrabook_" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=zahrabook_&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄</h3>
-                        <a href="https://instagram.com/zahrabook_" target="_blank" class="handle">@zahrabook_</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">1,556</div>
-                        <div class="lbl">فالوور</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">451</div>
-                        <div class="lbl">فالویینگ</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="val">136</div>
-                        <div class="lbl">پست‌ها</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://instagram.com/zahrabook_" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/68305551579?username=zahrabook_" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
-            </div>
-        </div>
-        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer">
-            <div>
-                <div class="card-top">
-                    <div class="avatar-wrap">
-                        <img src="avatars/baharthebookreviewer.jpg" alt="@baharthebookreviewer" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=baharthebookreviewer&background=random'">
-                    </div>
-                    <div class="info">
-                        <h3>بهار میرترابی | Bahar Reviews</h3>
-                        <a href="https://instagram.com/baharthebookreviewer" target="_blank" class="handle">@baharthebookreviewer</a>
-                    </div>
-                </div>
-
-                <div class="metrics">
-                    <div class="metric-item">
-                        <div class="val">83K</div>
+                        <div class="val highlight">83K</div>
                         <div class="lbl">فالوور</div>
                     </div>
                     <div class="metric-item">
@@ -1480,58 +433,832 @@
             </div>
 
             <div class="card-actions">
-                <a href="https://instagram.com/baharthebookreviewer" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/534761851?username=baharthebookreviewer" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+                <a href="https://instagram.com/baharthebookreviewer" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/534761851?username=baharthebookreviewer" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
             </div>
         </div>
-        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books">
-            <div>
+        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi" data-followers="66000.0">
+            <div class="rank-badge rank-2">🥈 رتبه ۲</div>
+            <div class="card-main-content">
                 <div class="card-top">
                     <div class="avatar-wrap">
-                        <img src="avatars/ryhn_books.jpg" alt="@ryhn_books" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ryhn_books&background=random'">
+                        <img src="avatars/acal.madahi.jpg" alt="@acal.madahi" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=acal.madahi&background=random'">
                     </div>
                     <div class="info">
-                        <h3>ریحانه| معرفی کتاب| ولاگ</h3>
-                        <a href="https://instagram.com/ryhn_books" target="_blank" class="handle">@ryhn_books</a>
+                        <h3 title="عسل | معرفی کتاب | پادکست | جستجوگر">عسل | معرفی کتاب | پادکست | جستجوگر</h3>
+                        <a href="https://instagram.com/acal.madahi" target="_blank" rel="noopener noreferrer" class="handle">@acal.madahi</a>
                     </div>
                 </div>
 
                 <div class="metrics">
                     <div class="metric-item">
-                        <div class="val">3,816</div>
+                        <div class="val highlight">66K</div>
                         <div class="lbl">فالوور</div>
                     </div>
                     <div class="metric-item">
-                        <div class="val">314</div>
+                        <div class="val">1,061</div>
                         <div class="lbl">فالویینگ</div>
                     </div>
                     <div class="metric-item">
-                        <div class="val">124</div>
+                        <div class="val">48</div>
                         <div class="lbl">پست‌ها</div>
                     </div>
                 </div>
             </div>
 
             <div class="card-actions">
-                <a href="https://instagram.com/ryhn_books" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/13589887347?username=ryhn_books" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+                <a href="https://instagram.com/acal.madahi" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/61899237612?username=acal.madahi" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
             </div>
         </div>
-        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak">
-            <div>
+        <div class="card" data-name="بوک اسپوک | Book Spook book_spook" data-followers="64000.0">
+            <div class="rank-badge rank-3">🥉 رتبه ۳</div>
+            <div class="card-main-content">
                 <div class="card-top">
                     <div class="avatar-wrap">
-                        <img src="avatars/ketabkhan.koochak.jpg" alt="@ketabkhan.koochak" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ketabkhan.koochak&background=random'">
+                        <img src="avatars/book_spook.jpg" alt="@book_spook" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=book_spook&background=random'">
                     </div>
                     <div class="info">
-                        <h3>کتابخوان کوچک</h3>
-                        <a href="https://instagram.com/ketabkhan.koochak" target="_blank" class="handle">@ketabkhan.koochak</a>
+                        <h3 title="بوک اسپوک | Book Spook">بوک اسپوک | Book Spook</h3>
+                        <a href="https://instagram.com/book_spook" target="_blank" rel="noopener noreferrer" class="handle">@book_spook</a>
                     </div>
                 </div>
 
                 <div class="metrics">
                     <div class="metric-item">
-                        <div class="val">4,809</div>
+                        <div class="val highlight">64K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">608</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">229</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/book_spook" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/58763326336?username=book_spook" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian" data-followers="48000.0">
+            <div class="rank-badge">#4</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/roxanaabasian.jpg" alt="@roxanaabasian" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=roxanaabasian&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="رکسانا|معرفی کتاب|گروه کتاب‌خوانی">رکسانا|معرفی کتاب|گروه کتاب‌خوانی</h3>
+                        <a href="https://instagram.com/roxanaabasian" target="_blank" rel="noopener noreferrer" class="handle">@roxanaabasian</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">48K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">496</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">159</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/roxanaabasian" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/50721683859?username=roxanaabasian" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir" data-followers="43000.0">
+            <div class="rank-badge">#5</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sarabooks.ir.jpg" alt="@sarabooks.ir" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=sarabooks.ir&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="سارا هوشمند | مروّج کتاب">سارا هوشمند | مروّج کتاب</h3>
+                        <a href="https://instagram.com/sarabooks.ir" target="_blank" rel="noopener noreferrer" class="handle">@sarabooks.ir</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">43K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,018</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">209</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sarabooks.ir" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54261538627?username=sarabooks.ir" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary" data-followers="34000.0">
+            <div class="rank-badge">#6</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/misaghsdiary.jpg" alt="@misaghsdiary" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=misaghsdiary&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="مروج کتاب  | میثاق">مروج کتاب  | میثاق</h3>
+                        <a href="https://instagram.com/misaghsdiary" target="_blank" rel="noopener noreferrer" class="handle">@misaghsdiary</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">34K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">424</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">87</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/misaghsdiary" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/53430309024?username=misaghsdiary" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book" data-followers="29000.0">
+            <div class="rank-badge">#7</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/tootfarangi._.book.jpg" alt="@tootfarangi._.book" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=tootfarangi._.book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="بوک بلاگر|بلاگر کتاب|توت فرنگی">بوک بلاگر|بلاگر کتاب|توت فرنگی</h3>
+                        <a href="https://instagram.com/tootfarangi._.book" target="_blank" rel="noopener noreferrer" class="handle">@tootfarangi._.book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">29K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">443</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">364</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/tootfarangi._.book" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49309827208?username=tootfarangi._.book" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook" data-followers="28000.0">
+            <div class="rank-badge">#8</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/artemisbook.jpg" alt="@artemisbook" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=artemisbook&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="گلاره یوسفی | مروّج کتاب📚">گلاره یوسفی | مروّج کتاب📚</h3>
+                        <a href="https://instagram.com/artemisbook" target="_blank" rel="noopener noreferrer" class="handle">@artemisbook</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">28K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">371</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">64</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/artemisbook" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/51728600771?username=artemisbook" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad" data-followers="21000.0">
+            <div class="rank-badge">#9</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/storyteller.shahrzad.jpg" alt="@storyteller.shahrzad" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=storyteller.shahrzad&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="شهرزاد داودی / بلاگر کتاب">شهرزاد داودی / بلاگر کتاب</h3>
+                        <a href="https://instagram.com/storyteller.shahrzad" target="_blank" rel="noopener noreferrer" class="handle">@storyteller.shahrzad</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">21K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">325</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">162</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/storyteller.shahrzad" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4566759752?username=storyteller.shahrzad" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book" data-followers="21000.0">
+            <div class="rank-badge">#10</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/dreems_book.jpg" alt="@dreems_book" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=dreems_book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |">بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |</h3>
+                        <a href="https://instagram.com/dreems_book" target="_blank" rel="noopener noreferrer" class="handle">@dreems_book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">21K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">340</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">390</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/dreems_book" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54663029267?username=dreems_book" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="پرناز بهزاد | سرگردان میان خیال و نوشتن sinmoruk" data-followers="20000.0">
+            <div class="rank-badge">#11</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sinmoruk.jpg" alt="@sinmoruk" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=sinmoruk&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="پرناز بهزاد | سرگردان میان خیال و نوشتن">پرناز بهزاد | سرگردان میان خیال و نوشتن</h3>
+                        <a href="https://instagram.com/sinmoruk" target="_blank" rel="noopener noreferrer" class="handle">@sinmoruk</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">20K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">942</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">280</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sinmoruk" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54089369041?username=sinmoruk" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="سـاقـی🌝 saghaaal" data-followers="17000.0">
+            <div class="rank-badge">#12</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/saghaaal.jpg" alt="@saghaaal" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=saghaaal&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="سـاقـی🌝">سـاقـی🌝</h3>
+                        <a href="https://instagram.com/saghaaal" target="_blank" rel="noopener noreferrer" class="handle">@saghaaal</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">17K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">416</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">181</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/saghaaal" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8247074757?username=saghaaal" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="Saba Samadi sabasamaadi" data-followers="16000.0">
+            <div class="rank-badge">#13</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sabasamaadi.jpg" alt="@sabasamaadi" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=sabasamaadi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="Saba Samadi">Saba Samadi</h3>
+                        <a href="https://instagram.com/sabasamaadi" target="_blank" rel="noopener noreferrer" class="handle">@sabasamaadi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">16K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">323</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">187</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sabasamaadi" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/65873377233?username=sabasamaadi" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri" data-followers="14000.0">
+            <div class="rank-badge">#14</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/nooshinaseri.jpg" alt="@nooshinaseri" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=nooshinaseri&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="جادوگر فانتزی | نوشین ناصری">جادوگر فانتزی | نوشین ناصری</h3>
+                        <a href="https://instagram.com/nooshinaseri" target="_blank" rel="noopener noreferrer" class="handle">@nooshinaseri</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">14K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,251</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">148</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/nooshinaseri" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8149026928?username=nooshinaseri" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika" data-followers="10000.0">
+            <div class="rank-badge">#15</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/bookish_melika.jpg" alt="@bookish_melika" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=bookish_melika&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="ملیکا|معرفی کتاب">ملیکا|معرفی کتاب</h3>
+                        <a href="https://instagram.com/bookish_melika" target="_blank" rel="noopener noreferrer" class="handle">@bookish_melika</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">10K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">382</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">216</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/bookish_melika" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/59224971552?username=bookish_melika" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox" data-followers="9487.0">
+            <div class="rank-badge">#16</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ziiboox.jpg" alt="@ziiboox" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=ziiboox&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="زیبوکس | بلاگر کتاب📚">زیبوکس | بلاگر کتاب📚</h3>
+                        <a href="https://instagram.com/ziiboox" target="_blank" rel="noopener noreferrer" class="handle">@ziiboox</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">9,487</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">412</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">94</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/ziiboox" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/71244256969?username=ziiboox" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="کیانا | معرفی کتاب kiana_am" data-followers="8848.0">
+            <div class="rank-badge">#17</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/kiana_am.jpg" alt="@kiana_am" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=kiana_am&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="کیانا | معرفی کتاب">کیانا | معرفی کتاب</h3>
+                        <a href="https://instagram.com/kiana_am" target="_blank" rel="noopener noreferrer" class="handle">@kiana_am</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">8,848</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">927</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">221</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/kiana_am" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/3271735228?username=kiana_am" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="بهار|کتاب booksbahar" data-followers="8459.0">
+            <div class="rank-badge">#18</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/booksbahar.jpg" alt="@booksbahar" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=booksbahar&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="بهار|کتاب">بهار|کتاب</h3>
+                        <a href="https://instagram.com/booksbahar" target="_blank" rel="noopener noreferrer" class="handle">@booksbahar</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">8,459</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">273</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">41</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/booksbahar" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77249092268?username=booksbahar" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi" data-followers="8254.0">
+            <div class="rank-badge">#19</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negarankarimi.jpg" alt="@negarankarimi" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=negarankarimi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد">نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد</h3>
+                        <a href="https://instagram.com/negarankarimi" target="_blank" rel="noopener noreferrer" class="handle">@negarankarimi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">8,254</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">541</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">92</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negarankarimi" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/16575498128?username=negarankarimi" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland" data-followers="7414.0">
+            <div class="rank-badge">#20</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/lilith.in.wonderland.jpg" alt="@lilith.in.wonderland" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=lilith.in.wonderland&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="صدام کن لیلیث">صدام کن لیلیث</h3>
+                        <a href="https://instagram.com/lilith.in.wonderland" target="_blank" rel="noopener noreferrer" class="handle">@lilith.in.wonderland</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">7,414</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">62</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">58</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/lilith.in.wonderland" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/70436047304?username=lilith.in.wonderland" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi" data-followers="7182.0">
+            <div class="rank-badge">#21</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/_cherryremi.jpg" alt="@_cherryremi" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=_cherryremi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="گیلاس خانم🍒|معرفی کتاب">گیلاس خانم🍒|معرفی کتاب</h3>
+                        <a href="https://instagram.com/_cherryremi" target="_blank" rel="noopener noreferrer" class="handle">@_cherryremi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">7,182</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">246</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">52</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/_cherryremi" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/72428977338?username=_cherryremi" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak" data-followers="4809.0">
+            <div class="rank-badge">#22</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ketabkhan.koochak.jpg" alt="@ketabkhan.koochak" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=ketabkhan.koochak&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="کتابخوان کوچک">کتابخوان کوچک</h3>
+                        <a href="https://instagram.com/ketabkhan.koochak" target="_blank" rel="noopener noreferrer" class="handle">@ketabkhan.koochak</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">4,809</div>
                         <div class="lbl">فالوور</div>
                     </div>
                     <div class="metric-item">
@@ -1546,15 +1273,661 @@
             </div>
 
             <div class="card-actions">
-                <a href="https://instagram.com/ketabkhan.koochak" target="_blank" class="btn btn-ig">اینستاگرام</a>
-                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/7781367101?username=ketabkhan.koochak" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+                <a href="https://instagram.com/ketabkhan.koochak" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/7781367101?username=ketabkhan.koochak" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall" data-followers="4769.0">
+            <div class="rank-badge">#23</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/artadall.jpg" alt="@artadall" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=artadall&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="آرتادال•کتابخوان •راوی کتاب">آرتادال•کتابخوان •راوی کتاب</h3>
+                        <a href="https://instagram.com/artadall" target="_blank" rel="noopener noreferrer" class="handle">@artadall</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">4,769</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">618</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">111</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/artadall" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/57728595825?username=artadall" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover" data-followers="4473.0">
+            <div class="rank-badge">#24</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/mozhdeh_booklover.jpg" alt="@mozhdeh_booklover" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=mozhdeh_booklover&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="Mozhdeh | مژده">Mozhdeh | مژده</h3>
+                        <a href="https://instagram.com/mozhdeh_booklover" target="_blank" rel="noopener noreferrer" class="handle">@mozhdeh_booklover</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">4,473</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">569</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">78</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/mozhdeh_booklover" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4272877791?username=mozhdeh_booklover" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism" data-followers="4247.0">
+            <div class="rank-badge">#25</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/coralism.jpg" alt="@coralism" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=coralism&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="[ معرفی کتاب با کُرالیسم ]">[ معرفی کتاب با کُرالیسم ]</h3>
+                        <a href="https://instagram.com/coralism" target="_blank" rel="noopener noreferrer" class="handle">@coralism</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">4,247</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">755</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">269</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/coralism" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/47149265245?username=coralism" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="نگین negin_books" data-followers="4129.0">
+            <div class="rank-badge">#26</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negin_books.jpg" alt="@negin_books" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=negin_books&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="نگین">نگین</h3>
+                        <a href="https://instagram.com/negin_books" target="_blank" rel="noopener noreferrer" class="handle">@negin_books</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">4,129</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">193</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">116</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negin_books" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/48380758957?username=negin_books" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads" data-followers="3823.0">
+            <div class="rank-badge">#27</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/pariaareads.jpg" alt="@pariaareads" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=pariaareads&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="پریا|بلاگر کتاب|کتاب فروشی آنلاین">پریا|بلاگر کتاب|کتاب فروشی آنلاین</h3>
+                        <a href="https://instagram.com/pariaareads" target="_blank" rel="noopener noreferrer" class="handle">@pariaareads</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">3,823</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,001</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">325</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/pariaareads" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/31333263899?username=pariaareads" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books" data-followers="3816.0">
+            <div class="rank-badge">#28</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ryhn_books.jpg" alt="@ryhn_books" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=ryhn_books&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="ریحانه| معرفی کتاب| ولاگ">ریحانه| معرفی کتاب| ولاگ</h3>
+                        <a href="https://instagram.com/ryhn_books" target="_blank" rel="noopener noreferrer" class="handle">@ryhn_books</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">3,816</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">314</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">124</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/ryhn_books" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/13589887347?username=ryhn_books" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm" data-followers="3426.0">
+            <div class="rank-badge">#29</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/fa_bookworm.jpg" alt="@fa_bookworm" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=fa_bookworm&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="فاطمه ام | معرفی کتاب|روزمرگی">فاطمه ام | معرفی کتاب|روزمرگی</h3>
+                        <a href="https://instagram.com/fa_bookworm" target="_blank" rel="noopener noreferrer" class="handle">@fa_bookworm</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">3,426</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">716</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">144</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/fa_bookworm" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49978730279?username=fa_bookworm" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa" data-followers="2739.0">
+            <div class="rank-badge">#30</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/imnon.aa.jpg" alt="@imnon.aa" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=imnon.aa&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="݊ꪀ𝑜ꪀ𝑎˖ ݁˖">݊ꪀ𝑜ꪀ𝑎˖ ݁˖</h3>
+                        <a href="https://instagram.com/imnon.aa" target="_blank" rel="noopener noreferrer" class="handle">@imnon.aa</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">2,739</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">321</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">25</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/imnon.aa" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77897372107?username=imnon.aa" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="MINA(book blogger)📚 mina.bookk" data-followers="2544.0">
+            <div class="rank-badge">#31</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/mina.bookk.jpg" alt="@mina.bookk" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=mina.bookk&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="MINA(book blogger)📚">MINA(book blogger)📚</h3>
+                        <a href="https://instagram.com/mina.bookk" target="_blank" rel="noopener noreferrer" class="handle">@mina.bookk</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">2,544</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">739</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">305</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/mina.bookk" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/67745728345?username=mina.bookk" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads" data-followers="2119.0">
+            <div class="rank-badge">#32</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/saman.reads.jpg" alt="@saman.reads" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=saman.reads&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="سامان|معرفی کتاب و فیلم">سامان|معرفی کتاب و فیلم</h3>
+                        <a href="https://instagram.com/saman.reads" target="_blank" rel="noopener noreferrer" class="handle">@saman.reads</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">2,119</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">219</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">30</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/saman.reads" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/63934830833?username=saman.reads" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_" data-followers="1556.0">
+            <div class="rank-badge">#33</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/zahrabook_.jpg" alt="@zahrabook_" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=zahrabook_&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄">زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄</h3>
+                        <a href="https://instagram.com/zahrabook_" target="_blank" rel="noopener noreferrer" class="handle">@zahrabook_</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">1,556</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">451</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">136</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/zahrabook_" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/68305551579?username=zahrabook_" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab" data-followers="1474.0">
+            <div class="rank-badge">#34</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/totfarangii_ketab.jpg" alt="@totfarangii_ketab" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=totfarangii_ketab&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد">دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد</h3>
+                        <a href="https://instagram.com/totfarangii_ketab" target="_blank" rel="noopener noreferrer" class="handle">@totfarangii_ketab</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">1,474</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">526</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">52</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/totfarangii_ketab" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54136633599?username=totfarangii_ketab" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan" data-followers="1424.0">
+            <div class="rank-badge">#35</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/about_dokhtarjan.jpg" alt="@about_dokhtarjan" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=about_dokhtarjan&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="دخترجان | کتاب | روزمرگی">دخترجان | کتاب | روزمرگی</h3>
+                        <a href="https://instagram.com/about_dokhtarjan" target="_blank" rel="noopener noreferrer" class="handle">@about_dokhtarjan</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">1,424</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">251</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">72</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/about_dokhtarjan" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/38819979162?username=about_dokhtarjan" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="گِرین💚 greenverse.book" data-followers="1355.0">
+            <div class="rank-badge">#36</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/greenverse.book.jpg" alt="@greenverse.book" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=greenverse.book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="گِرین💚">گِرین💚</h3>
+                        <a href="https://instagram.com/greenverse.book" target="_blank" rel="noopener noreferrer" class="handle">@greenverse.book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">1,355</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">247</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">53</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/greenverse.book" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77780480331?username=greenverse.book" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art" data-followers="648.0">
+            <div class="rank-badge">#37</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/joi_boy_art.jpg" alt="@joi_boy_art" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=joi_boy_art&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="جوی بوی | معرفی کتاب | یوتوبر">جوی بوی | معرفی کتاب | یوتوبر</h3>
+                        <a href="https://instagram.com/joi_boy_art" target="_blank" rel="noopener noreferrer" class="handle">@joi_boy_art</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">648</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">685</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">47</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/joi_boy_art" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/66123199249?username=joi_boy_art" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
+            </div>
+        </div>
+        <div class="card" data-name="neginbook negin_book" data-followers="131.0">
+            <div class="rank-badge">#38</div>
+            <div class="card-main-content">
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negin_book.jpg" alt="@negin_book" class="avatar" loading="lazy" onerror="this.src='https://ui-avatars.com/api/?name=negin_book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3 title="neginbook">neginbook</h3>
+                        <a href="https://instagram.com/negin_book" target="_blank" rel="noopener noreferrer" class="handle">@negin_book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val highlight">131</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">770</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">15</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negin_book" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    اینستاگرام
+                </a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/46014025981?username=negin_book" target="_blank" rel="noopener noreferrer" class="btn btn-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    تحلیل و آمار
+                </a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>منتشر شده بر روی <b>GitHub Pages</b> با آدرس <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a></p>
-        <p style="margin-top:6px; font-size:12px; color:#64748b;">داده‌ها مستقیماً از Instagram و پلتفرم تحلیلی Coco.gl استخراج و به‌روزرسانی شده‌اند.</p>
+        <p>منتشر شده بر روی <b>GitHub Pages</b>: <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a></p>
+        <p style="margin-top:6px; font-size:12px; color:#64748b;">طراحی کاملاً واکنش‌گرا (Responsive) بهینه‌سازی‌شده برای موبایل، تبلت و دسکتاپ</p>
     </footer>
 </div>
 
