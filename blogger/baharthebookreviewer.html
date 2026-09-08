@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>آمار و تحلیل تحلیلی بهار میرترابی | Bahar Reviews (@baharthebookreviewer) | BookBloger</title>
-    <meta name="description" content="شناسنامه آماری، تعداد فالوور، نرخ تعامل، میانگین بازدید و تعرفه تبلیغات بهار میرترابی | Bahar Reviews (@baharthebookreviewer) بوک‌بلاگر کتاب">
+    <title>آمار تحلیلی آنلاین بهار میرترابی | Bahar Reviews (@baharthebookreviewer) | BoxAPI Analytics</title>
+    <meta name="description" content="آنالیز زنده و هوشمند پیج اینستاگرام بهار میرترابی | Bahar Reviews (@baharthebookreviewer) بوک‌بلاگر کتاب، میانگین لایک، ویو ریلز و تعرفه تبلیغات">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -45,6 +45,9 @@
 
         .nav-back {
             margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .back-btn {
@@ -66,6 +69,22 @@
             background: #1e293b;
             color: #fff;
             transform: translateX(4px);
+        }
+
+        .top-posts-link {
+            color: #f472b6;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 700;
+            background: rgba(236, 72, 153, 0.15);
+            border: 1px solid rgba(236, 72, 153, 0.35);
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .top-posts-link:hover {
+            background: rgba(236, 72, 153, 0.25);
         }
 
         .profile-header {
@@ -120,13 +139,27 @@
             color: #818cf8;
             direction: ltr;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             font-weight: 600;
             text-decoration: none;
         }
 
         .profile-handle:hover {
             text-decoration: underline;
+        }
+
+        .profile-bio-box {
+            background: rgba(11, 15, 25, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .metrics-grid {
@@ -220,8 +253,8 @@
 
         .analytics-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
             margin-bottom: 16px;
         }
 
@@ -230,17 +263,18 @@
             border: 1px solid var(--border);
             padding: 14px;
             border-radius: 12px;
+            text-align: center;
         }
 
         .analytics-item .a-lbl {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-secondary);
             margin-bottom: 4px;
         }
 
         .analytics-item .a-val {
-            font-size: 16px;
-            font-weight: 800;
+            font-size: 17px;
+            font-weight: 900;
             color: #f8fafc;
         }
 
@@ -260,6 +294,52 @@
             font-size: 13.5px;
             color: #cbd5e1;
             line-height: 1.7;
+        }
+
+        /* Media posts list */
+        .media-posts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .media-post-item {
+            background: rgba(11, 15, 25, 0.5);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+        .media-post-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .media-type-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+        }
+
+        .media-counts {
+            display: flex;
+            gap: 14px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #cbd5e1;
+            direction: ltr;
+        }
+
+        .media-caption {
+            font-size: 12.5px;
+            color: #94a3b8;
+            line-height: 1.5;
         }
 
         .package-item {
@@ -448,6 +528,9 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             بازگشت به دایرکتوری اصلی
         </a>
+        <a href="../top-posts.html" class="top-posts-link">
+            🔥 مشاهده ۱۰ پست برتر بوک‌بلاگرها
+        </a>
     </div>
 
     <div class="profile-header">
@@ -457,6 +540,10 @@
         </div>
         <h1 class="profile-name">بهار میرترابی | Bahar Reviews</h1>
         <a href="https://instagram.com/baharthebookreviewer" target="_blank" rel="noopener noreferrer" class="profile-handle">@baharthebookreviewer</a>
+
+        <div class="profile-bio-box">
+            <b>بیوگرافی:</b> ✨از کتاب‌ها شروع شد،‌ به همه‌چیز رسید<br>Book, Film and Game Reviews<br>تولید کننده محتوا در یوتیوب و اینستاگرام<br>👇کانال یوتیوب و همخوانی جوهرنوشان
+        </div>
 
         <div class="metrics-grid">
             <div class="metric-box">
@@ -489,28 +576,124 @@
     <div class="section-card">
         <div class="section-title">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-            تحلیل هوشمند و شاخص‌های بازدهی (Analytics & Reach)
+            تحلیل هوشمند و شاخص‌های آماری BoxAPI
         </div>
         <div class="analytics-grid">
             <div class="analytics-item">
-                <div class="a-lbl">دسته‌بندی اینفلوئنسری</div>
-                <div class="a-val">مگا بوک‌بلاگر (Tier 1)</div>
+                <div class="a-lbl">میانگین لایک پست‌ها</div>
+                <div class="a-val green">2,097</div>
             </div>
             <div class="analytics-item">
-                <div class="a-lbl">نرخ تعامل تخمینی (Engagement Rate)</div>
+                <div class="a-lbl">میانگین کامنت‌ها</div>
+                <div class="a-val gold">128</div>
+            </div>
+            <div class="analytics-item">
+                <div class="a-lbl">میانگین ویو و پخش ریلز</div>
+                <div class="a-val">111,618</div>
+            </div>
+            <div class="analytics-item">
+                <div class="a-lbl">نرخ تعامل (ER)</div>
                 <div class="a-val green">۴.۲٪ الی ۵.۸٪</div>
             </div>
             <div class="analytics-item">
-                <div class="a-lbl">تخمین بازدید هر استوری (Story Views)</div>
+                <div class="a-lbl">تخمین بازدید هر استوری</div>
                 <div class="a-val gold">9,960 تا 14,940 بازدید</div>
             </div>
             <div class="analytics-item">
-                <div class="a-lbl">پتانسیل بازدید ریلز (Reels Reach)</div>
-                <div class="a-val">29,049 تا 74,700 بازدید</div>
+                <div class="a-lbl">سطح اینفلوئنسری</div>
+                <div class="a-val" style="font-size:14px;">مگا بوک‌بلاگر (Tier 1)</div>
             </div>
         </div>
         <div class="audience-box">
             <b>🎯 پرسونای مخاطبان و تارگت کمپین:</b> مخاطبان پرشمار کتاب، علاقه‌مندان به رمان‌های پرفروش، سینما، بازی و ادبیات داستانی.
+        </div>
+    </div>
+
+    <!-- Recent Media Analytics -->
+    <div class="section-card">
+        <div class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            تحلیل آخرین پست‌ها و ریلزهای منتشرشده
+        </div>
+        <div class="media-posts-grid">
+            
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 2,918</span>
+                        <span>💬 224</span>
+                        <span>▶️ 54,424</span>
+                    </div>
+                </div>
+                <div class="media-caption">اگه چند ساله من رو دنبال می‌کنین، از قبل جواب این سؤال رو می‌دونین. اگ</div>
+            </div>
+            
+
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 11,584</span>
+                        <span>💬 527</span>
+                        <span>▶️ 400,052</span>
+                    </div>
+                </div>
+                <div class="media-caption">چطوری آنلاین بردگیم بازی کنیم؟ | معرفی بهترین سایتِ بردگیم‌ آنلاین + ۵</div>
+            </div>
+            
+
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 2,309</span>
+                        <span>💬 110</span>
+                        <span>▶️ 101,327</span>
+                    </div>
+                </div>
+                <div class="media-caption">بهار چه فیلم و سریال‌هایی دیدم؟ | معرفی ۳۱ فیلم و سریال 🌧️🎬</div>
+            </div>
+            
+
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 2,102</span>
+                        <span>💬 243</span>
+                        <span>▶️ 41,323</span>
+                    </div>
+                </div>
+                <div class="media-caption">راستش رو بگو تا حالا چند بار Friends دیدی؟😁</div>
+            </div>
+            
+
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 3,163</span>
+                        <span>💬 160</span>
+                        <span>▶️ 43,397</span>
+                    </div>
+                </div>
+                <div class="media-caption">۱۰ هنرمند که بعد از مرگ مشهور شدن| فکت‌هایی از تاریخ هنر 🎨✨</div>
+            </div>
+            
+
+            <div class="media-post-item">
+                <div class="media-post-top">
+                    <span class="media-type-badge">Reel/Video</span>
+                    <div class="media-counts">
+                        <span>❤️ 992</span>
+                        <span>💬 153</span>
+                        <span>▶️ 29,190</span>
+                    </div>
+                </div>
+                <div class="media-caption">🎭 دوره‌ی ۳۶ جلسه‌ای بازیگری تئاتر با امیرعلی ابراهیمی</div>
+            </div>
+            
         </div>
     </div>
 
