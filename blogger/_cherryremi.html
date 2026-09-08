@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>آمار و تعرفه تبلیغات گیلاس خانم🍒|معرفی کتاب (@_cherryremi) | BookBloger</title>
-    <meta name="description" content="شناسنامه آماری، تعداد فالوور، تعرفه تبلیغات و تحلیل اینستاگرام گیلاس خانم🍒|معرفی کتاب (@_cherryremi) بوک‌بلاگر کتاب">
+    <title>آمار و تحلیل تحلیلی گیلاس خانم🍒|معرفی کتاب (@_cherryremi) | BookBloger</title>
+    <meta name="description" content="شناسنامه آماری، تعداد فالوور، نرخ تعامل، میانگین بازدید و تعرفه تبلیغات گیلاس خانم🍒|معرفی کتاب (@_cherryremi) بوک‌بلاگر کتاب">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
         }
 
@@ -141,7 +141,7 @@
         }
 
         .metric-box .num {
-            font-size: clamp(20px, 4.5vw, 28px);
+            font-size: clamp(18px, 4vw, 26px);
             font-weight: 900;
             color: #f1f5f9;
         }
@@ -207,7 +207,7 @@
         }
 
         .section-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
             color: #38bdf8;
             margin-bottom: 16px;
@@ -218,11 +218,48 @@
             padding-bottom: 12px;
         }
 
-        .pricing-card h3 {
-            font-size: 15px;
-            font-weight: 700;
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .analytics-item {
+            background: rgba(11, 15, 25, 0.5);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+        .analytics-item .a-lbl {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .analytics-item .a-val {
+            font-size: 16px;
+            font-weight: 800;
             color: #f8fafc;
-            margin-bottom: 12px;
+        }
+
+        .analytics-item .a-val.green {
+            color: #4ade80;
+        }
+
+        .analytics-item .a-val.gold {
+            color: #fbbf24;
+        }
+
+        .audience-box {
+            background: rgba(11, 15, 25, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            line-height: 1.7;
         }
 
         .package-item {
@@ -378,6 +415,10 @@
                 padding: 12px 6px;
                 gap: 6px;
             }
+            .analytics-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
             .header-actions {
                 flex-direction: column;
             }
@@ -444,6 +485,35 @@
         </div>
     </div>
 
+    <!-- Analytics KPIs Section -->
+    <div class="section-card">
+        <div class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            تحلیل هوشمند و شاخص‌های بازدهی (Analytics & Reach)
+        </div>
+        <div class="analytics-grid">
+            <div class="analytics-item">
+                <div class="a-lbl">دسته‌بندی اینفلوئنسری</div>
+                <div class="a-val">نانو بوک‌بلاگر نیچ (Tier 4)</div>
+            </div>
+            <div class="analytics-item">
+                <div class="a-lbl">نرخ تعامل تخمینی (Engagement Rate)</div>
+                <div class="a-val green">۸.۲٪ الی ۱۲.۰٪</div>
+            </div>
+            <div class="analytics-item">
+                <div class="a-lbl">تخمین بازدید هر استوری (Story Views)</div>
+                <div class="a-val gold">1,292 تا 2,154 بازدید</div>
+            </div>
+            <div class="analytics-item">
+                <div class="a-lbl">پتانسیل بازدید ریلز (Reels Reach)</div>
+                <div class="a-val">4,309 تا 14,364 بازدید</div>
+            </div>
+        </div>
+        <div class="audience-box">
+            <b>🎯 پرسونای مخاطبان و تارگت کمپین:</b> مخاطبان صمیمی با ارتباط عمیق و دوستانه با بلاگر، تعامل بالا در استوری‌ها.
+        </div>
+    </div>
+
     <!-- Pricing Section -->
     <div class="section-card">
         <div class="section-title">
@@ -452,7 +522,7 @@
         </div>
         
         <div class="pricing-card empty-pricing">
-            <p style="color: #94a3b8; font-size: 14px;">در حال حاضر تعرفه این پیج به صورت عمومی ثبت نشده است. برای استعلام قیمت، مشاوره و هماهنگی کمپین تبلیغاتی با این بلاگر از طریق راه‌های ارتباطی زیر با <b>ریک سانچز</b> در تماس باشید.</p>
+            <p style="color: #94a3b8; font-size: 14px;">تعرفه رسمی این پیج پس از تایید هماهنگ‌کننده ثبت خواهد شد. برای استعلام مستقیم قیمت، بررسی پکیج‌های موجود و رزرو کمپین با <b>ریک سانچز</b> در ارتباط باشید.</p>
         </div>
     
     </div>
@@ -470,7 +540,7 @@
     </div>
 
     <footer>
-        <p>گردآوری و مدیریت: <b>ریک سانچز (Rick Sanchez)</b> | دایرکتوری بوک‌بلاگرها</p>
+        <p>گردآوری، تحلیل داده و مدیریت: <b>ریک سانچز (Rick Sanchez)</b> | دایرکتوری بوک‌بلاگرها</p>
     </footer>
 </div>
 </body>
