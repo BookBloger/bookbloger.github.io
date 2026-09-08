@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرفی و دایرکتوری برترین بوک‌بلاگرهای فارسی اینستاگرام | BookBloger</title>
+    <meta name="description" content="فهرست جامع و تحلیل آماری بوک‌بلاگرهای ایرانی در اینستاگرام همراه با آمار دقیق فالوورها، پست‌ها و لینک‌های آنالیز تخصصی">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151d30;
+            --card-hover: #1c2742;
+            --accent: #6366f1;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #23304e;
+            --badge-foll: #fbbf24;
+            --badge-post: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 18px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .stats-banner {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-box .num {
+            font-size: 24px;
+            font-weight: 800;
+            color: #38bdf8;
+        }
+
+        .stat-box .label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color: #3b82f6;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .avatar-wrap {
+            position: relative;
+            width: 68px;
+            height: 68px;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #38bdf8;
+            background: #0f172a;
+        }
+
+        .info h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .info .handle {
+            font-size: 13px;
+            color: #818cf8;
+            direction: ltr;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            background: rgba(11, 15, 25, 0.6);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .metric-item .val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .metric-item .lbl {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+        }
+
+        .btn-ig:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .btn-coco {
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
+        }
+
+        .btn-coco:hover {
+            background: #334155;
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="hero-badge">✨ بانک رسمی و تحلیلی بلاگرهای کتاب</div>
+        <h1>دایرکتوری جامع بوک‌بلاگرهای اینستاگرام</h1>
+        <p class="subtitle">مرجع کامل دسترسی، بررسی و مشاهده داده‌های آماری و تحلیلی بلاگرهای برتر کتاب فارسی‌زبان</p>
+        
+        <div class="stats-banner">
+            <div class="stat-box">
+                <div class="num">38</div>
+                <div class="label">پیج بوک‌بلاگر ثبت‌شده</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">۱۰۰٪</div>
+                <div class="label">پروفایل‌های تأییدشده</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">Coco.gl</div>
+                <div class="label">هوش تحلیلی متصل</div>
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="جستجو بر اساس نام یا آیدی اینستاگرام...">
+        </div>
+    </header>
+
+    <div class="grid" id="bloggersGrid">
+        <div class="card" data-name="MINA(book blogger)📚 mina.bookk">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/mina.bookk.jpg" alt="@mina.bookk" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=mina.bookk&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>MINA(book blogger)📚</h3>
+                        <a href="https://instagram.com/mina.bookk" target="_blank" class="handle">@mina.bookk</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">2,544</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">739</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">305</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/mina.bookk" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/67745728345?username=mina.bookk" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/pariaareads.jpg" alt="@pariaareads" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=pariaareads&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>پریا|بلاگر کتاب|کتاب فروشی آنلاین</h3>
+                        <a href="https://instagram.com/pariaareads" target="_blank" class="handle">@pariaareads</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">3,823</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,001</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">325</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/pariaareads" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/31333263899?username=pariaareads" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/storyteller.shahrzad.jpg" alt="@storyteller.shahrzad" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=storyteller.shahrzad&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>شهرزاد داودی / بلاگر کتاب</h3>
+                        <a href="https://instagram.com/storyteller.shahrzad" target="_blank" class="handle">@storyteller.shahrzad</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">21K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">325</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">162</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/storyteller.shahrzad" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4566759752?username=storyteller.shahrzad" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="سـاقـی🌝 saghaaal">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/saghaaal.jpg" alt="@saghaaal" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=saghaaal&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>سـاقـی🌝</h3>
+                        <a href="https://instagram.com/saghaaal" target="_blank" class="handle">@saghaaal</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">17K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">416</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">181</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/saghaaal" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8247074757?username=saghaaal" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/artadall.jpg" alt="@artadall" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=artadall&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>آرتادال•کتابخوان •راوی کتاب</h3>
+                        <a href="https://instagram.com/artadall" target="_blank" class="handle">@artadall</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">4,769</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">618</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">111</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/artadall" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/57728595825?username=artadall" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/dreems_book.jpg" alt="@dreems_book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=dreems_book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |</h3>
+                        <a href="https://instagram.com/dreems_book" target="_blank" class="handle">@dreems_book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">21K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">340</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">390</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/dreems_book" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54663029267?username=dreems_book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/saman.reads.jpg" alt="@saman.reads" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=saman.reads&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>سامان|معرفی کتاب و فیلم</h3>
+                        <a href="https://instagram.com/saman.reads" target="_blank" class="handle">@saman.reads</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">2,119</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">219</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">30</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/saman.reads" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/63934830833?username=saman.reads" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/acal.madahi.jpg" alt="@acal.madahi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=acal.madahi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>عسل | معرفی کتاب | پادکست | جستجوگر</h3>
+                        <a href="https://instagram.com/acal.madahi" target="_blank" class="handle">@acal.madahi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">66K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,061</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">48</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/acal.madahi" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/61899237612?username=acal.madahi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="پرناز بهزاد | سرگردان میان خیال و نوشتن sinmoruk">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sinmoruk.jpg" alt="@sinmoruk" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sinmoruk&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>پرناز بهزاد | سرگردان میان خیال و نوشتن</h3>
+                        <a href="https://instagram.com/sinmoruk" target="_blank" class="handle">@sinmoruk</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">20K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">942</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">280</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sinmoruk" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54089369041?username=sinmoruk" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/tootfarangi._.book.jpg" alt="@tootfarangi._.book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=tootfarangi._.book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>بوک بلاگر|بلاگر کتاب|توت فرنگی</h3>
+                        <a href="https://instagram.com/tootfarangi._.book" target="_blank" class="handle">@tootfarangi._.book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">29K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">443</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">364</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/tootfarangi._.book" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49309827208?username=tootfarangi._.book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/imnon.aa.jpg" alt="@imnon.aa" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=imnon.aa&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>݊ꪀ𝑜ꪀ𝑎˖ ݁˖</h3>
+                        <a href="https://instagram.com/imnon.aa" target="_blank" class="handle">@imnon.aa</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">2,739</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">321</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">25</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/imnon.aa" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77897372107?username=imnon.aa" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/roxanaabasian.jpg" alt="@roxanaabasian" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=roxanaabasian&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>رکسانا|معرفی کتاب|گروه کتاب‌خوانی</h3>
+                        <a href="https://instagram.com/roxanaabasian" target="_blank" class="handle">@roxanaabasian</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">48K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">496</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">159</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/roxanaabasian" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/50721683859?username=roxanaabasian" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sarabooks.ir.jpg" alt="@sarabooks.ir" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sarabooks.ir&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>سارا هوشمند | مروّج کتاب</h3>
+                        <a href="https://instagram.com/sarabooks.ir" target="_blank" class="handle">@sarabooks.ir</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">43K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,018</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">209</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sarabooks.ir" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54261538627?username=sarabooks.ir" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/_cherryremi.jpg" alt="@_cherryremi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=_cherryremi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>گیلاس خانم🍒|معرفی کتاب</h3>
+                        <a href="https://instagram.com/_cherryremi" target="_blank" class="handle">@_cherryremi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">7,182</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">246</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">52</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/_cherryremi" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/72428977338?username=_cherryremi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="نگین negin_books">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negin_books.jpg" alt="@negin_books" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negin_books&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>نگین</h3>
+                        <a href="https://instagram.com/negin_books" target="_blank" class="handle">@negin_books</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">4,129</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">193</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">116</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negin_books" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/48380758957?username=negin_books" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/totfarangii_ketab.jpg" alt="@totfarangii_ketab" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=totfarangii_ketab&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد</h3>
+                        <a href="https://instagram.com/totfarangii_ketab" target="_blank" class="handle">@totfarangii_ketab</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">1,474</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">526</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">52</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/totfarangii_ketab" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/54136633599?username=totfarangii_ketab" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negarankarimi.jpg" alt="@negarankarimi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negarankarimi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد</h3>
+                        <a href="https://instagram.com/negarankarimi" target="_blank" class="handle">@negarankarimi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">8,254</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">541</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">92</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negarankarimi" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/16575498128?username=negarankarimi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/lilith.in.wonderland.jpg" alt="@lilith.in.wonderland" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=lilith.in.wonderland&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>صدام کن لیلیث</h3>
+                        <a href="https://instagram.com/lilith.in.wonderland" target="_blank" class="handle">@lilith.in.wonderland</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">7,414</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">62</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">58</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/lilith.in.wonderland" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/70436047304?username=lilith.in.wonderland" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/mozhdeh_booklover.jpg" alt="@mozhdeh_booklover" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=mozhdeh_booklover&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>Mozhdeh | مژده</h3>
+                        <a href="https://instagram.com/mozhdeh_booklover" target="_blank" class="handle">@mozhdeh_booklover</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">4,473</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">569</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">78</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/mozhdeh_booklover" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/4272877791?username=mozhdeh_booklover" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/misaghsdiary.jpg" alt="@misaghsdiary" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=misaghsdiary&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>مروج کتاب  | میثاق</h3>
+                        <a href="https://instagram.com/misaghsdiary" target="_blank" class="handle">@misaghsdiary</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">34K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">424</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">87</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/misaghsdiary" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/53430309024?username=misaghsdiary" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="Saba Samadi sabasamaadi">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/sabasamaadi.jpg" alt="@sabasamaadi" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=sabasamaadi&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>Saba Samadi</h3>
+                        <a href="https://instagram.com/sabasamaadi" target="_blank" class="handle">@sabasamaadi</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">16K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">323</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">187</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/sabasamaadi" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/65873377233?username=sabasamaadi" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="کیانا | معرفی کتاب kiana_am">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/kiana_am.jpg" alt="@kiana_am" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=kiana_am&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>کیانا | معرفی کتاب</h3>
+                        <a href="https://instagram.com/kiana_am" target="_blank" class="handle">@kiana_am</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">8,848</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">927</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">221</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/kiana_am" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/3271735228?username=kiana_am" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="بوک اسپوک | Book Spook book_spook">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/book_spook.jpg" alt="@book_spook" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=book_spook&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>بوک اسپوک | Book Spook</h3>
+                        <a href="https://instagram.com/book_spook" target="_blank" class="handle">@book_spook</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">64K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">608</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">229</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/book_spook" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/58763326336?username=book_spook" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/artemisbook.jpg" alt="@artemisbook" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=artemisbook&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>گلاره یوسفی | مروّج کتاب📚</h3>
+                        <a href="https://instagram.com/artemisbook" target="_blank" class="handle">@artemisbook</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">28K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">371</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">64</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/artemisbook" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/51728600771?username=artemisbook" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/coralism.jpg" alt="@coralism" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=coralism&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>[ معرفی کتاب با کُرالیسم ]</h3>
+                        <a href="https://instagram.com/coralism" target="_blank" class="handle">@coralism</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">4,247</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">755</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">269</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/coralism" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/47149265245?username=coralism" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/bookish_melika.jpg" alt="@bookish_melika" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=bookish_melika&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>ملیکا|معرفی کتاب</h3>
+                        <a href="https://instagram.com/bookish_melika" target="_blank" class="handle">@bookish_melika</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">10K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">382</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">216</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/bookish_melika" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/59224971552?username=bookish_melika" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/nooshinaseri.jpg" alt="@nooshinaseri" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=nooshinaseri&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>جادوگر فانتزی | نوشین ناصری</h3>
+                        <a href="https://instagram.com/nooshinaseri" target="_blank" class="handle">@nooshinaseri</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">14K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,251</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">148</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/nooshinaseri" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/8149026928?username=nooshinaseri" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="neginbook negin_book">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/negin_book.jpg" alt="@negin_book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=negin_book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>neginbook</h3>
+                        <a href="https://instagram.com/negin_book" target="_blank" class="handle">@negin_book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">131</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">770</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">15</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/negin_book" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/46014025981?username=negin_book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ziiboox.jpg" alt="@ziiboox" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ziiboox&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>زیبوکس | بلاگر کتاب📚</h3>
+                        <a href="https://instagram.com/ziiboox" target="_blank" class="handle">@ziiboox</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">9,487</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">412</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">94</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/ziiboox" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/71244256969?username=ziiboox" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/about_dokhtarjan.jpg" alt="@about_dokhtarjan" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=about_dokhtarjan&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>دخترجان | کتاب | روزمرگی</h3>
+                        <a href="https://instagram.com/about_dokhtarjan" target="_blank" class="handle">@about_dokhtarjan</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">1,424</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">251</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">72</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/about_dokhtarjan" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/38819979162?username=about_dokhtarjan" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/joi_boy_art.jpg" alt="@joi_boy_art" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=joi_boy_art&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>جوی بوی | معرفی کتاب | یوتوبر</h3>
+                        <a href="https://instagram.com/joi_boy_art" target="_blank" class="handle">@joi_boy_art</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">648</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">685</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">47</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/joi_boy_art" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/66123199249?username=joi_boy_art" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="بهار|کتاب booksbahar">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/booksbahar.jpg" alt="@booksbahar" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=booksbahar&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>بهار|کتاب</h3>
+                        <a href="https://instagram.com/booksbahar" target="_blank" class="handle">@booksbahar</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">8,459</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">273</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">41</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/booksbahar" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77249092268?username=booksbahar" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="گِرین💚 greenverse.book">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/greenverse.book.jpg" alt="@greenverse.book" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=greenverse.book&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>گِرین💚</h3>
+                        <a href="https://instagram.com/greenverse.book" target="_blank" class="handle">@greenverse.book</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">1,355</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">247</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">53</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/greenverse.book" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/77780480331?username=greenverse.book" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/fa_bookworm.jpg" alt="@fa_bookworm" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=fa_bookworm&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>فاطمه ام | معرفی کتاب|روزمرگی</h3>
+                        <a href="https://instagram.com/fa_bookworm" target="_blank" class="handle">@fa_bookworm</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">3,426</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">716</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">144</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/fa_bookworm" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/49978730279?username=fa_bookworm" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/zahrabook_.jpg" alt="@zahrabook_" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=zahrabook_&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄</h3>
+                        <a href="https://instagram.com/zahrabook_" target="_blank" class="handle">@zahrabook_</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">1,556</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">451</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">136</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/zahrabook_" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/68305551579?username=zahrabook_" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/baharthebookreviewer.jpg" alt="@baharthebookreviewer" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=baharthebookreviewer&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>بهار میرترابی | Bahar Reviews</h3>
+                        <a href="https://instagram.com/baharthebookreviewer" target="_blank" class="handle">@baharthebookreviewer</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">83K</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">1,240</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">392</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/baharthebookreviewer" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/534761851?username=baharthebookreviewer" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ryhn_books.jpg" alt="@ryhn_books" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ryhn_books&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>ریحانه| معرفی کتاب| ولاگ</h3>
+                        <a href="https://instagram.com/ryhn_books" target="_blank" class="handle">@ryhn_books</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">3,816</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">314</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">124</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/ryhn_books" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/13589887347?username=ryhn_books" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak">
+            <div>
+                <div class="card-top">
+                    <div class="avatar-wrap">
+                        <img src="avatars/ketabkhan.koochak.jpg" alt="@ketabkhan.koochak" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=ketabkhan.koochak&background=random'">
+                    </div>
+                    <div class="info">
+                        <h3>کتابخوان کوچک</h3>
+                        <a href="https://instagram.com/ketabkhan.koochak" target="_blank" class="handle">@ketabkhan.koochak</a>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="val">4,809</div>
+                        <div class="lbl">فالوور</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">528</div>
+                        <div class="lbl">فالویینگ</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">64</div>
+                        <div class="lbl">پست‌ها</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <a href="https://instagram.com/ketabkhan.koochak" target="_blank" class="btn btn-ig">اینستاگرام</a>
+                <a href="https://coco.gl/dashboard/analytics/INSTAGRAM/7781367101?username=ketabkhan.koochak" target="_blank" class="btn btn-coco">📊 آنالیز Coco</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>منتشر شده بر روی <b>GitHub Pages</b> با آدرس <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a></p>
+        <p style="margin-top:6px; font-size:12px; color:#64748b;">داده‌ها مستقیماً از Instagram و پلتفرم تحلیلی Coco.gl استخراج و به‌روزرسانی شده‌اند.</p>
+    </footer>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+            const text = card.getAttribute('data-name').toLowerCase();
+            if (text.includes(query)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
