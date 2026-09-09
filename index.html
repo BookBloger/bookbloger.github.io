@@ -391,24 +391,57 @@
             margin-bottom: 16px;
         }
 
-        .top-posts-banner-btn {
+        .nav-banners-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .banner-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
-            border: 1.5px solid rgba(236, 72, 153, 0.4);
-            color: #f472b6;
             padding: 8px 20px;
             border-radius: 12px;
             font-size: 14px;
             font-weight: 800;
             text-decoration: none;
-            margin-bottom: 16px;
-            transition: all 0.2s;
+            transition: all 0.25s ease;
         }
 
-        .top-posts-banner-btn:hover {
+        .banner-btn.galaxy {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(99, 102, 241, 0.25) 100%);
+            border: 1.5px solid rgba(56, 189, 248, 0.5);
+            color: #38bdf8;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+        }
+
+        .banner-btn.galaxy:hover {
+            background: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .banner-btn.top-posts {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+            border: 1.5px solid rgba(236, 72, 153, 0.4);
+            color: #f472b6;
+        }
+
+        .banner-btn.top-posts:hover {
             background: rgba(236, 72, 153, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .banner-btn.top-100 {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+        }
+
+        .banner-btn.top-100:hover {
+            background: #1e293b;
             transform: translateY(-2px);
         }
 
@@ -890,11 +923,19 @@
 <div class="container">
     <header>
         <div class="hero-badge">📊 مرتب‌شده بر اساس بیشترین فالوور اینستاگرام</div>
-        <div style="margin-bottom: 14px;">
-            <a href="top-posts.html" class="top-posts-banner-btn">
-                🔥 مشاهده ۱۰ پست برتر و وایرال بوک‌بلاگرها (بیش از ۲۲ میلیون بازدید) ↗
+        
+        <div class="nav-banners-row">
+            <a href="3d.html" class="banner-btn galaxy">
+                🌌 ورود به کهکشان سه‌بعدی بوک‌بلاگرها (Three.js 3D) ↗
+            </a>
+            <a href="top-posts.html" class="banner-btn top-posts">
+                🔥 ۱۰ پست برتر و وایرال
+            </a>
+            <a href="top-100-posts.html" class="banner-btn top-100">
+                🏆 ۱۰۰ پست برتر
             </a>
         </div>
+
         <h1>رتبه‌بندی جامع بوک‌بلاگرهای اینستاگرام</h1>
         <p class="subtitle">مرجع رسمی دایرکتوری، آمار زنده BoxAPI، نرخ تعامل و تعرفه تبلیغات بلاگرهای برتر کتاب ایران</p>
         <div class="curator-tag">✨ گردآوری، تحلیل داده و مدیریت: <b>ریک سانچز | Rick Sanchez</b></div>
@@ -2792,7 +2833,7 @@
 
     <footer>
         <p>گردآوری، تحلیل داده و توسعه: <span class="footer-curator">ریک سانچز (Rick Sanchez)</span></p>
-        <p style="margin-top:6px;">منتشر شده بر روی <b>GitHub Pages</b>: <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a> | <a href="sitemap.xml" style="color:#94a3b8; text-decoration:none; font-size:12px;">نقشه سایت (Sitemap)</a></p>
+        <p style="margin-top:6px;">منتشر شده بر روی <b>GitHub Pages</b>: <a href="https://bookbloger.github.io" style="color:#38bdf8; text-decoration:none;">bookbloger.github.io</a> | <a href="3d.html" style="color:#818cf8; text-decoration:none; font-weight:700;">کهکشان سه‌بعدی (3D)</a> | <a href="sitemap.xml" style="color:#94a3b8; text-decoration:none; font-size:12px;">نقشه سایت</a></p>
     </footer>
 </div>
 

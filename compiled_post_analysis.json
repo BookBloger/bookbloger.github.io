@@ -1,0 +1,123 @@
+[
+  {
+    "id": "DPGTs6_iH9U",
+    "type": "Tech News Digest",
+    "title": "خبرهای مهم تکنولوژی | ۲۹ شهریور تا ۴ مهر (شیائومی ۱۷، کوالکام و رویدادهای داغ)",
+    "likes": 11000,
+    "comments": 62,
+    "estimated_views": 260000,
+    "category": "اخبار داغ و پکیج هفتگی",
+    "retention_driver": "عناوین جنجالی + ضرب‌آهنگ تند + دسته‌بندی موضوعی",
+    "weakness": "کال تو اکشن برای کامنت‌گذاری ضعیف‌تر بوده"
+  },
+  {
+    "id": "DIwQMp_I2wd",
+    "type": "AI Tool / Platform معرفی ابزار کاربردی",
+    "title": "دسترسی به تمام هوش مصنوعی‌های پرمیوم با پول یه پیتزا (irani-ai.com)",
+    "likes": 8899,
+    "comments": 412,
+    "estimated_views": 210000,
+    "category": "ابزار کاربردی / حل مسئله اقتصادی مخاطب",
+    "retention_driver": "هوک مالی/ارزشی قوی (قیمت پیتزا vs اکانت دلاری) + ترند بودن AI",
+    "weakness": "وابستگی به سرویس ثالث"
+  },
+  {
+    "id": "DQ9ME-VjSmi",
+    "type": "Tech News Digest",
+    "title": "خبرهای مهم تکنولوژی طی روزهای گذشته (سه‌شنبه و جمعه در عایوتک)",
+    "likes": 7091,
+    "comments": 24,
+    "estimated_views": 165000,
+    "category": "اخبار تکنولوژی",
+    "retention_driver": "استمرار برندینگ روزهای ثابت خبری",
+    "weakness": "کامنت پایین به خاطر فرمت رادیویی/صرفاً خبری"
+  },
+  {
+    "id": "DavZ_7eoY1H",
+    "type": "AI Video Generation Tutorial",
+    "title": "ساخت ویدیوهای هالیوودی با هوش مصنوعی سیدنس (Seedance) + پرامپت‌های VIP",
+    "likes": 920,
+    "comments": 89,
+    "estimated_views": 28000,
+    "category": "آموزش تخصصی هوش مصنوعی و پرامپت",
+    "retention_driver": "کال تو اکشن اتومیشن کامنت (کامنت کن «سیدنس»)",
+    "weakness": "کاهش شدید ریچ نسبت به پست‌های عمومی‌تر"
+  },
+  {
+    "id": "DcBvy-ihtem",
+    "type": "AI Workflow / Inpainting",
+    "title": "ادیت بخشی از ویدیو با هوش مصنوعی Seedance 2.5 برای پروداکشن حرفه‌ای",
+    "likes": 716,
+    "comments": 108,
+    "estimated_views": 22000,
+    "category": "آموزش تخصصی هوش مصنوعی",
+    "retention_driver": "حل مشکل فنی ویدیوسازان + تعامل بالا",
+    "weakness": "مخاطب نیچ‌تر"
+  },
+  {
+    "id": "DcLz0Odt_Jb",
+    "type": "Utility / App معرفی ابزار صوتی",
+    "title": "تمیزترین تشخیص صدای فارسی در تمام سیستم‌عامل‌ها با اپ Soniox",
+    "likes": 641,
+    "comments": 77,
+    "estimated_views": 19500,
+    "category": "ابزار بهره‌وری و ابزار روزمره",
+    "retention_driver": "دموی عملی و تست مستقیم تبدیل صوت به متن فارسی",
+    "weakness": "هوک اول ویدیو می‌توانست کنجکاوی بیشتری ایجاد کند"
+  },
+  {
+    "id": "Db_WlcBtZpp",
+    "type": "AI Prompting Trick",
+    "title": "تنظیم استاندارد STE در پرامپت‌نویسی قبل از چت با هوش مصنوعی",
+    "likes": 426,
+    "comments": 12,
+    "estimated_views": 14000,
+    "category": "ترفند حرفه‌ای پرامپت",
+    "retention_driver": "آموزش عمیق و کاربردی برای کاربران چت‌بات‌ها",
+    "weakness": "پیچیدگی مفهومی برای مخاطب عام اینستاگرام"
+  },
+  {
+    "id": "DcBCoh1s-TD",
+    "type": "Daily News",
+    "title": "مهم‌ترین خبرهای تکنولوژی طی چند روز گذشته",
+    "likes": 188,
+    "comments": 0,
+    "estimated_views": 6500,
+    "category": "اخبار روتین",
+    "retention_driver": "پوشش روتین",
+    "weakness": "عنوان تکراری/بدون هوک اختصاصی + بدون CTA تعاملی"
+  },
+  {
+    "id": "DbNYVh7N_OJ",
+    "type": "Daily News",
+    "title": "مهم‌ترین خبرهای دنیای فناوری طی چند روز گذشته",
+    "likes": 156,
+    "comments": 1,
+    "estimated_views": 5800,
+    "category": "اخبار روتین",
+    "retention_driver": "پوشش خبری",
+    "weakness": "تیتر کلیشه‌ای و عدم ایجاد بحث یا چالش برای مخاطب"
+  },
+  {
+    "id": "Dbxw-02tdNG",
+    "type": "Privacy / Security Trick",
+    "title": "پاک کردن ردپای کامل سرچ‌ها از اکانت گوگل حتی بعد از پاک کردن History",
+    "likes": 106,
+    "comments": 1,
+    "estimated_views": 4200,
+    "category": "امنیت و ترفند گوگل",
+    "retention_driver": "موضوع جذاب اما کاور/هوک نیازمند بازنگری",
+    "weakness": "اشباع بودن این ترفند در اینستاگرام و نیاز به زاویه دید جدید"
+  },
+  {
+    "id": "DaaWh_CNGVk",
+    "type": "Daily News",
+    "title": "مهم‌ترین خبرهای تکنولوژی طی چند روز پیش",
+    "likes": 112,
+    "comments": 1,
+    "estimated_views": 3900,
+    "category": "اخبار روتین",
+    "retention_driver": "روتین",
+    "weakness": "افت الگوریتمی به دلیل تکرار فرمت‌های یکنواخت بدون هوک بصری قوی"
+  }
+]
