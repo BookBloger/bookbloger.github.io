@@ -43,7 +43,6 @@
             z-index: 1;
         }
 
-        /* UI Overlay Layer */
         .ui-overlay {
             position: absolute;
             top: 0;
@@ -58,7 +57,6 @@
             padding: 24px;
         }
 
-        /* Top Navigation Bar */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -105,6 +103,7 @@
         .nav-links {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
@@ -130,13 +129,12 @@
             transform: translateY(-2px);
         }
 
-        .nav-btn.active {
-            background: rgba(99, 102, 241, 0.3);
-            border-color: #6366f1;
-            color: #a5b4fc;
+        .nav-btn.group-tg {
+            background: linear-gradient(135deg, #229ED9, #0284c7);
+            border-color: #38bdf8;
+            color: #fff;
         }
 
-        /* Center / Hint controls */
         .controls-hint {
             align-self: center;
             background: rgba(15, 23, 42, 0.65);
@@ -162,7 +160,6 @@
             font-weight: 800;
         }
 
-        /* View Modes Switcher */
         .view-switcher {
             position: absolute;
             bottom: 30px;
@@ -195,7 +192,6 @@
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
         }
 
-        /* Blogger Modal Popup Card */
         .blogger-modal {
             position: absolute;
             bottom: 30px;
@@ -376,7 +372,6 @@
             color: #fff;
         }
 
-        /* Tooltip for hovering on spheres */
         #sphere-tooltip {
             position: absolute;
             z-index: 30;
@@ -419,13 +414,9 @@
 </head>
 <body>
 
-    <!-- 3D Canvas -->
     <canvas id="webgl-canvas"></canvas>
-
-    <!-- Tooltip -->
     <div id="sphere-tooltip">نام بلاگر</div>
 
-    <!-- UI Overlay -->
     <div class="ui-overlay">
         <div class="top-bar">
             <div class="brand-pill">
@@ -434,6 +425,7 @@
             </div>
 
             <div class="nav-links">
+                <a href="https://t.me/+tReSYWxBreFmYThk" target="_blank" rel="noopener noreferrer" class="nav-btn group-tg">👥 گروه تلگرام</a>
                 <a href="index.html" class="nav-btn">دایرکتوری اصلی</a>
                 <a href="top-posts.html" class="nav-btn">۱۰ پست برتر</a>
                 <a href="top-100-posts.html" class="nav-btn">۱۰۰ پست برتر</a>
@@ -445,17 +437,15 @@
             <span>با ماوس بچرخانید (Drag) • بزرگ‌نمایی با اسکرول • کلیک روی هر سیاره برای جزئیات</span>
         </div>
 
-        <div></div> <!-- Spacer -->
+        <div></div>
     </div>
 
-    <!-- View Mode Switcher -->
     <div class="view-switcher">
         <button class="switch-btn active" id="modeGalaxy">🌌 کهکشان کروی</button>
         <button class="switch-btn" id="modeHelix">🧬 مارپیچ رتبه‌بندی</button>
         <button class="switch-btn" id="modeRing">🪐 حلقه‌های مدار</button>
     </div>
 
-    <!-- Blogger Info Modal Card -->
     <div class="blogger-modal hidden" id="bloggerModal">
         <button class="modal-close" id="modalClose">✕</button>
         <div class="modal-header">
@@ -491,10 +481,8 @@
     </div>
 
     <script>
-        // Data injected from backend
         const bloggersData = [{"rank": 1, "username": "datoverse", "name": "کتاب/رمان/مانگا | داتورس", "followers_num": 315000.0, "followers_str": "315K", "posts_cnt": "197", "tier": "نانو / میکرو بوک‌بلاگر (Tier 4)", "bio": "", "avatar": "avatars/datoverse.jpg", "detail_url": "blogger/datoverse.html", "ig_url": "https://instagram.com/datoverse"}, {"rank": 2, "username": "pragma_book", "name": "پراگما/ابوالفضل ثابت مقدم/کتاب/مروج ادبیات", "followers_num": 216000.0, "followers_str": "216K", "posts_cnt": "202", "tier": "نانو / میکرو بوک‌بلاگر (Tier 4)", "bio": "", "avatar": "avatars/pragma_book.jpg", "detail_url": "blogger/pragma_book.html", "ig_url": "https://instagram.com/pragma_book"}, {"rank": 3, "username": "baharthebookreviewer", "name": "بهار میرترابی | Bahar Reviews", "followers_num": 83000.0, "followers_str": "83K", "posts_cnt": "392", "tier": "مگا بوک‌بلاگر (Tier 1)", "bio": "", "avatar": "avatars/baharthebookreviewer.jpg", "detail_url": "blogger/baharthebookreviewer.html", "ig_url": "https://instagram.com/baharthebookreviewer"}, {"rank": 4, "username": "acal.madahi", "name": "عسل | معرفی کتاب | پادکست | جستجوگر", "followers_num": 66000.0, "followers_str": "66K", "posts_cnt": "48", "tier": "مگا بوک‌بلاگر (Tier 1)", "bio": "", "avatar": "avatars/acal.madahi.jpg", "detail_url": "blogger/acal.madahi.html", "ig_url": "https://instagram.com/acal.madahi"}, {"rank": 5, "username": "book_spook", "name": "بوک اسپوک | Book Spook", "followers_num": 64000.0, "followers_str": "64K", "posts_cnt": "229", "tier": "مگا بوک‌بلاگر (Tier 1)", "bio": "", "avatar": "avatars/book_spook.jpg", "detail_url": "blogger/book_spook.html", "ig_url": "https://instagram.com/book_spook"}, {"rank": 6, "username": "parham.hami", "name": "پرهام حامی | ادبیات، هنر، سینما", "followers_num": 61600.0, "followers_str": "61.6K", "posts_cnt": "43", "tier": "ماکرو بلاگر ادبیات و هنر (Tier 2)", "bio": "𝗜𝗟𝗟𝗨𝗦𝗧𝗥𝗔𝗧𝗨𝗥, 𝗣𝗛𝗢𝗧𝗢𝗚𝗥𝗔𝗣𝗛𝗘𝗥\n• Founder of boujan.co Studio\nبرای همکاری و معرفی : 📨\nبررسی ادبیات ، هنر ، سینما و معماری", "avatar": "avatars/parham.hami.jpg", "detail_url": "blogger/parham.hami.html", "ig_url": "https://instagram.com/parham.hami"}, {"rank": 7, "username": "maryamaamalii", "name": "مریم آمالی | آگاهی بخش", "followers_num": 50100.0, "followers_str": "50.1K", "posts_cnt": "104", "tier": "مگا بوک‌بلاگر (Tier 1)", "bio": "تجربیاتم در جهت زیست بهتر📖🕯️🧶\nBooks | lifestyle | selfcare | photography\nکانال یوتیوب،تلگرام و دوره رایگان👇🏼", "avatar": "avatars/maryamaamalii.jpg", "detail_url": "blogger/maryamaamalii.html", "ig_url": "https://instagram.com/maryamaamalii"}, {"rank": 8, "username": "roxanaabasian", "name": "رکسانا|معرفی کتاب|گروه کتاب‌خوانی", "followers_num": 48000.0, "followers_str": "48K", "posts_cnt": "159", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/roxanaabasian.jpg", "detail_url": "blogger/roxanaabasian.html", "ig_url": "https://instagram.com/roxanaabasian"}, {"rank": 9, "username": "sarabooks.ir", "name": "سارا هوشمند | مروّج کتاب", "followers_num": 43000.0, "followers_str": "43K", "posts_cnt": "209", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/sarabooks.ir.jpg", "detail_url": "blogger/sarabooks.ir.html", "ig_url": "https://instagram.com/sarabooks.ir"}, {"rank": 10, "username": "misaghsdiary", "name": "مروج کتاب  | میثاق", "followers_num": 34000.0, "followers_str": "34K", "posts_cnt": "87", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/misaghsdiary.jpg", "detail_url": "blogger/misaghsdiary.html", "ig_url": "https://instagram.com/misaghsdiary"}, {"rank": 11, "username": "tootfarangi._.book", "name": "بوک بلاگر|بلاگر کتاب|توت فرنگی", "followers_num": 29000.0, "followers_str": "29K", "posts_cnt": "364", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/tootfarangi._.book.jpg", "detail_url": "blogger/tootfarangi._.book.html", "ig_url": "https://instagram.com/tootfarangi._.book"}, {"rank": 12, "username": "artemisbook", "name": "گلاره یوسفی | مروّج کتاب📚", "followers_num": 28000.0, "followers_str": "28K", "posts_cnt": "64", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/artemisbook.jpg", "detail_url": "blogger/artemisbook.html", "ig_url": "https://instagram.com/artemisbook"}, {"rank": 13, "username": "storyteller.shahrzad", "name": "شهرزاد داودی / بلاگر کتاب", "followers_num": 21000.0, "followers_str": "21K", "posts_cnt": "162", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/storyteller.shahrzad.jpg", "detail_url": "blogger/storyteller.shahrzad.html", "ig_url": "https://instagram.com/storyteller.shahrzad"}, {"rank": 14, "username": "dreems_book", "name": "بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |", "followers_num": 21000.0, "followers_str": "21K", "posts_cnt": "390", "tier": "ماکرو بوک‌بلاگر (Tier 2)", "bio": "", "avatar": "avatars/dreems_book.jpg", "detail_url": "blogger/dreems_book.html", "ig_url": "https://instagram.com/dreems_book"}, {"rank": 15, "username": "saghaaal", "name": "سـاقـی🌝", "followers_num": 17000.0, "followers_str": "17K", "posts_cnt": "181", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/saghaaal.jpg", "detail_url": "blogger/saghaaal.html", "ig_url": "https://instagram.com/saghaaal"}, {"rank": 16, "username": "sabasamaadi", "name": "Saba Samadi", "followers_num": 16000.0, "followers_str": "16K", "posts_cnt": "187", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/sabasamaadi.jpg", "detail_url": "blogger/sabasamaadi.html", "ig_url": "https://instagram.com/sabasamaadi"}, {"rank": 17, "username": "book_zarii", "name": "زهرا پناهی | مروج کتاب", "followers_num": 16000.0, "followers_str": "16K", "posts_cnt": "64", "tier": "نانو / میکرو بوک‌بلاگر (Tier 4)", "bio": "", "avatar": "avatars/book_zarii.jpg", "detail_url": "blogger/book_zarii.html", "ig_url": "https://instagram.com/book_zarii"}, {"rank": 18, "username": "nooshinaseri", "name": "جادوگر فانتزی | نوشین ناصری", "followers_num": 14000.0, "followers_str": "14K", "posts_cnt": "148", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/nooshinaseri.jpg", "detail_url": "blogger/nooshinaseri.html", "ig_url": "https://instagram.com/nooshinaseri"}, {"rank": 19, "username": "mahi_bookworld", "name": "دنیای کتاب ماهی | معرفی کتاب 🐟", "followers_num": 11800.0, "followers_str": "11.8K", "posts_cnt": "265", "tier": "میکرو بوک‌بلاگر فعال (Tier 3)", "bio": "مروج کتاب | میزبان همخوانی‌های ماهی 🐟\n📚 کتاب می‌خونم و بی‌تعارف درباره‌شون حرف می‌زنم\n🎥 ویدیوهای بیشتر توی یوتیوب ↓\n🛒 کتابفروشی ماهی ↓", "avatar": "avatars/mahi_bookworld.jpg", "detail_url": "blogger/mahi_bookworld.html", "ig_url": "https://instagram.com/mahi_bookworld"}, {"rank": 20, "username": "bookish_melika", "name": "ملیکا|معرفی کتاب", "followers_num": 10000.0, "followers_str": "10K", "posts_cnt": "216", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/bookish_melika.jpg", "detail_url": "blogger/bookish_melika.html", "ig_url": "https://instagram.com/bookish_melika"}, {"rank": 21, "username": "ziiboox", "name": "زیبوکس | بلاگر کتاب📚", "followers_num": 9487.0, "followers_str": "9,487", "posts_cnt": "94", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/ziiboox.jpg", "detail_url": "blogger/ziiboox.html", "ig_url": "https://instagram.com/ziiboox"}, {"rank": 22, "username": "kiana_am", "name": "کیانا | معرفی کتاب", "followers_num": 8848.0, "followers_str": "8,848", "posts_cnt": "221", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/kiana_am.jpg", "detail_url": "blogger/kiana_am.html", "ig_url": "https://instagram.com/kiana_am"}, {"rank": 23, "username": "booksbahar", "name": "بهار|کتاب", "followers_num": 8459.0, "followers_str": "8,459", "posts_cnt": "41", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/booksbahar.jpg", "detail_url": "blogger/booksbahar.html", "ig_url": "https://instagram.com/booksbahar"}, {"rank": 24, "username": "negarankarimi", "name": "نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد", "followers_num": 8254.0, "followers_str": "8,254", "posts_cnt": "92", "tier": "میکرو بوک‌بلاگر تخصصی (Tier 3)", "bio": "", "avatar": "avatars/negarankarimi.jpg", "detail_url": "blogger/negarankarimi.html", "ig_url": "https://instagram.com/negarankarimi"}, {"rank": 25, "username": "lilith.in.wonderland", "name": "صدام کن لیلیث", "followers_num": 7414.0, "followers_str": "7,414", "posts_cnt": "58", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/lilith.in.wonderland.jpg", "detail_url": "blogger/lilith.in.wonderland.html", "ig_url": "https://instagram.com/lilith.in.wonderland"}, {"rank": 26, "username": "_cherryremi", "name": "گیلاس خانم🍒|معرفی کتاب", "followers_num": 7182.0, "followers_str": "7,182", "posts_cnt": "52", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/cherryremi.jpg", "detail_url": "blogger/_cherryremi.html", "ig_url": "https://instagram.com/_cherryremi"}, {"rank": 27, "username": "ke_mesle_ketab", "name": "زینب مهرنگ | ک مثل کتاب", "followers_num": 7092.0, "followers_str": "7,092", "posts_cnt": "307", "tier": "نانو / میکرو بوک‌بلاگر (Tier 4)", "bio": "", "avatar": "avatars/ke_mesle_ketab.jpg", "detail_url": "blogger/ke_mesle_ketab.html", "ig_url": "https://instagram.com/ke_mesle_ketab"}, {"rank": 28, "username": "ayazreviews", "name": "ایاز | کتاب و سینما", "followers_num": 4917.0, "followers_str": "4,917", "posts_cnt": "128", "tier": "نانو / میکرو بوک‌بلاگر پاپ‌کالچر (Tier 4)", "bio": "Personal: @ayaz2000may\nStore: @Divanesaz\nYouTube: AyazReviews 🐼\nYouTube: Wizarding Center 🪄", "avatar": "avatars/ayazreviews.jpg", "detail_url": "blogger/ayazreviews.html", "ig_url": "https://instagram.com/ayazreviews"}, {"rank": 29, "username": "ketabkhan.koochak", "name": "کتابخوان کوچک", "followers_num": 4809.0, "followers_str": "4,809", "posts_cnt": "64", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/ketabkhan.koochak.jpg", "detail_url": "blogger/ketabkhan.koochak.html", "ig_url": "https://instagram.com/ketabkhan.koochak"}, {"rank": 30, "username": "artadall", "name": "آرتادال•کتابخوان •راوی کتاب", "followers_num": 4769.0, "followers_str": "4,769", "posts_cnt": "111", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/artadall.jpg", "detail_url": "blogger/artadall.html", "ig_url": "https://instagram.com/artadall"}, {"rank": 31, "username": "mozhdeh_booklover", "name": "Mozhdeh | مژده", "followers_num": 4473.0, "followers_str": "4,473", "posts_cnt": "78", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/mozhdeh_booklover.jpg", "detail_url": "blogger/mozhdeh_booklover.html", "ig_url": "https://instagram.com/mozhdeh_booklover"}, {"rank": 32, "username": "coralism", "name": "[ معرفی کتاب با کُرالیسم ]", "followers_num": 4247.0, "followers_str": "4,247", "posts_cnt": "269", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/coralism.jpg", "detail_url": "blogger/coralism.html", "ig_url": "https://instagram.com/coralism"}, {"rank": 33, "username": "negin_books", "name": "نگین", "followers_num": 4129.0, "followers_str": "4,129", "posts_cnt": "116", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/negin_books.jpg", "detail_url": "blogger/negin_books.html", "ig_url": "https://instagram.com/negin_books"}, {"rank": 34, "username": "pariaareads", "name": "پریا|بلاگر کتاب|کتاب فروشی آنلاین", "followers_num": 3823.0, "followers_str": "3,823", "posts_cnt": "325", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/pariaareads.jpg", "detail_url": "blogger/pariaareads.html", "ig_url": "https://instagram.com/pariaareads"}, {"rank": 35, "username": "ryhn_books", "name": "ریحانه| معرفی کتاب| ولاگ", "followers_num": 3816.0, "followers_str": "3,816", "posts_cnt": "124", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/ryhn_books.jpg", "detail_url": "blogger/ryhn_books.html", "ig_url": "https://instagram.com/ryhn_books"}, {"rank": 36, "username": "ketab_jaann", "name": "کتاب جان | تکه کتاب و رمان", "followers_num": 3517.0, "followers_str": "3,517", "posts_cnt": "234", "tier": "نانو / میکرو بوک‌بلاگر (Tier 4)", "bio": "", "avatar": "avatars/ketab_jaann.jpg", "detail_url": "blogger/ketab_jaann.html", "ig_url": "https://instagram.com/ketab_jaann"}, {"rank": 37, "username": "fa_bookworm", "name": "فاطمه ام | معرفی کتاب|روزمرگی", "followers_num": 3426.0, "followers_str": "3,426", "posts_cnt": "144", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/fa_bookworm.jpg", "detail_url": "blogger/fa_bookworm.html", "ig_url": "https://instagram.com/fa_bookworm"}, {"rank": 38, "username": "imnon.aa", "name": "݊ꪀ𝑜ꪀ𝑎˖ ݁˖", "followers_num": 2739.0, "followers_str": "2,739", "posts_cnt": "25", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/imnon.aa.jpg", "detail_url": "blogger/imnon.aa.html", "ig_url": "https://instagram.com/imnon.aa"}, {"rank": 39, "username": "saman.reads", "name": "سامان|معرفی کتاب و فیلم", "followers_num": 2119.0, "followers_str": "2,119", "posts_cnt": "30", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/saman.reads.jpg", "detail_url": "blogger/saman.reads.html", "ig_url": "https://instagram.com/saman.reads"}, {"rank": 40, "username": "zahrabook_", "name": "زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄", "followers_num": 1556.0, "followers_str": "1,556", "posts_cnt": "136", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/zahrabook_.jpg", "detail_url": "blogger/zahrabook_.html", "ig_url": "https://instagram.com/zahrabook_"}, {"rank": 41, "username": "totfarangii_ketab", "name": "دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد", "followers_num": 1474.0, "followers_str": "1,474", "posts_cnt": "52", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/totfarangii_ketab.jpg", "detail_url": "blogger/totfarangii_ketab.html", "ig_url": "https://instagram.com/totfarangii_ketab"}, {"rank": 42, "username": "about_dokhtarjan", "name": "دخترجان | کتاب | روزمرگی", "followers_num": 1424.0, "followers_str": "1,424", "posts_cnt": "72", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/about_dokhtarjan.jpg", "detail_url": "blogger/about_dokhtarjan.html", "ig_url": "https://instagram.com/about_dokhtarjan"}, {"rank": 43, "username": "greenverse.book", "name": "گِرین💚", "followers_num": 1355.0, "followers_str": "1,355", "posts_cnt": "53", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/greenverse.book.jpg", "detail_url": "blogger/greenverse.book.html", "ig_url": "https://instagram.com/greenverse.book"}, {"rank": 44, "username": "joi_boy_art", "name": "جوی بوی | معرفی کتاب | یوتوبر", "followers_num": 648.0, "followers_str": "648", "posts_cnt": "47", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/joi_boy_art.jpg", "detail_url": "blogger/joi_boy_art.html", "ig_url": "https://instagram.com/joi_boy_art"}, {"rank": 45, "username": "parnianbook0", "name": "پرنیان آرین | معرفی کتاب", "followers_num": 442.0, "followers_str": "442", "posts_cnt": "21", "tier": "نانو بوک‌بلاگر صمیمی (Tier 4)", "bio": "به گوشه ی دنج من خوش اومدید.\nمن یک هابیت کوچولو ام.🦄", "avatar": "avatars/parnianbook0.jpg", "detail_url": "blogger/parnianbook0.html", "ig_url": "https://instagram.com/parnianbook0"}, {"rank": 46, "username": "negin_book", "name": "neginbook", "followers_num": 131.0, "followers_str": "131", "posts_cnt": "15", "tier": "نانو بوک‌بلاگر نیچ (Tier 4)", "bio": "", "avatar": "avatars/negin_book.jpg", "detail_url": "blogger/negin_book.html", "ig_url": "https://instagram.com/negin_book"}];
 
-        // DOM elements
         const canvas = document.getElementById('webgl-canvas');
         const tooltip = document.getElementById('sphere-tooltip');
         const modal = document.getElementById('bloggerModal');
@@ -509,7 +497,6 @@
         const modalDetailLink = document.getElementById('modalDetailLink');
         const modalIgLink = document.getElementById('modalIgLink');
 
-        // Three.js Scene Setup
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x030712, 0.0012);
 
@@ -521,7 +508,6 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
-        // OrbitControls
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
@@ -531,7 +517,6 @@
         controls.autoRotate = true;
         controls.autoRotateSpeed = 0.4;
 
-        // Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
         scene.add(ambientLight);
 
@@ -547,7 +532,6 @@
         coreLight.position.set(0, 0, 0);
         scene.add(coreLight);
 
-        // Starfield Particles Background
         const starsGeo = new THREE.BufferGeometry();
         const starCount = 3500;
         const starPositions = new Float32Array(starCount * 3);
@@ -560,11 +544,11 @@
 
             const colorChoice = Math.random();
             if (colorChoice > 0.7) {
-                starColors[i] = 0.6; starColors[i + 1] = 0.7; starColors[i + 2] = 1.0; // Blueish
+                starColors[i] = 0.6; starColors[i + 1] = 0.7; starColors[i + 2] = 1.0;
             } else if (colorChoice > 0.4) {
-                starColors[i] = 1.0; starColors[i + 1] = 0.6; starColors[i + 2] = 0.9; // Pinkish
+                starColors[i] = 1.0; starColors[i + 1] = 0.6; starColors[i + 2] = 0.9;
             } else {
-                starColors[i] = 0.9; starColors[i + 1] = 0.9; starColors[i + 2] = 1.0; // White
+                starColors[i] = 0.9; starColors[i + 1] = 0.9; starColors[i + 2] = 1.0;
             }
         }
 
@@ -580,7 +564,6 @@
         const starField = new THREE.Points(starsGeo, starsMat);
         scene.add(starField);
 
-        // Central Core Sun (Glowing Sphere)
         const coreGeo = new THREE.SphereGeometry(14, 32, 32);
         const coreMat = new THREE.MeshBasicMaterial({
             color: 0x818cf8,
@@ -591,23 +574,18 @@
         const coreMesh = new THREE.Mesh(coreGeo, coreMat);
         scene.add(coreMesh);
 
-        // Texture Loader for Avatars
         const textureLoader = new THREE.TextureLoader();
         const bloggerMeshes = [];
         const bloggerGroup = new THREE.Group();
         scene.add(bloggerGroup);
 
-        // Calculate size mapping (Logarithmic scale based on followers count)
-        // Min followers ~130 -> radius ~6
-        // Max followers ~315,000 -> radius ~28
         function getFollowerRadius(foll) {
             const minF = 100;
             const maxF = 350000;
             const norm = (Math.log10(Math.max(foll, minF)) - Math.log10(minF)) / (Math.log10(maxF) - Math.log10(minF));
-            return 6 + norm * 22; // Range 6 to 28
+            return 6 + norm * 22;
         }
 
-        // Layout Formations
         const targets = {
             galaxy: [],
             helix: [],
@@ -620,10 +598,7 @@
             const radius = getFollowerRadius(b.followers_num);
             const sphereGeo = new THREE.SphereGeometry(radius, 32, 32);
 
-            // Load Texture
-            const texture = textureLoader.load(b.avatar, undefined, undefined, () => {
-                // fallback on error
-            });
+            const texture = textureLoader.load(b.avatar, undefined, undefined, () => {});
 
             const sphereMat = new THREE.MeshStandardMaterial({
                 map: texture,
@@ -636,7 +611,6 @@
             const mesh = new THREE.Mesh(sphereGeo, sphereMat);
             mesh.userData = b;
 
-            // Add glowing aura ring around top performers
             if (b.rank <= 3) {
                 const ringColor = b.rank === 1 ? 0xf59e0b : (b.rank === 2 ? 0xe2e8f0 : 0xb45309);
                 const ringGeo = new THREE.RingGeometry(radius + 1.5, radius + 3.5, 32);
@@ -653,7 +627,6 @@
             bloggerGroup.add(mesh);
             bloggerMeshes.push(mesh);
 
-            // 1. Formation: Galaxy (Spherical Spiral Distribution)
             const phi = Math.acos(-1 + (2 * i) / total);
             const theta = Math.sqrt(total * Math.PI) * phi;
             const distGalaxy = 160 + (i % 3) * 45;
@@ -663,7 +636,6 @@
                 z: distGalaxy * Math.cos(phi)
             });
 
-            // 2. Formation: Helix (DNA Spiral by Rank)
             const helixAngle = i * 0.35;
             const helixDist = 170;
             const helixY = (i - total / 2) * 12;
@@ -673,7 +645,6 @@
                 z: helixDist * Math.sin(helixAngle)
             });
 
-            // 3. Formation: Ring / Solar System Orbits
             const ringIdx = i % 5;
             const orbitRadius = 90 + ringIdx * 55;
             const ringAngle = (Math.floor(i / 5) / Math.ceil(total / 5)) * Math.PI * 2 + (ringIdx * 0.4);
@@ -683,11 +654,9 @@
                 z: orbitRadius * Math.sin(ringAngle)
             });
 
-            // Initial position (Galaxy)
             mesh.position.set(targets.galaxy[i].x, targets.galaxy[i].y, targets.galaxy[i].z);
         });
 
-        // Smoothly Transition between Formations
         function transformTo(modeName) {
             const currentTargets = targets[modeName];
             bloggerMeshes.forEach((mesh, i) => {
@@ -698,7 +667,6 @@
             });
         }
 
-        // Mode Switcher Buttons
         document.getElementById('modeGalaxy').addEventListener('click', (e) => {
             setActiveBtn(e.target);
             transformTo('galaxy');
@@ -717,7 +685,6 @@
             btn.classList.add('active');
         }
 
-        // Raycasting for Hover & Click
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
         let hoveredMesh = null;
@@ -737,7 +704,6 @@
                     hoveredMesh.material.emissiveIntensity = 0.8;
                 }
                 
-                // Show tooltip securely via textContent
                 tooltip.style.opacity = '1';
                 tooltip.style.left = `${event.clientX}px`;
                 tooltip.style.top = `${event.clientY}px`;
@@ -753,7 +719,6 @@
             }
         });
 
-        // Click Event -> Focus and Open Modal
         window.addEventListener('click', (event) => {
             if (event.target.closest('.blogger-modal') || event.target.closest('.view-switcher') || event.target.closest('.top-bar')) {
                 return;
@@ -766,7 +731,6 @@
                 const selected = intersects[0].object;
                 showBloggerModal(selected.userData);
 
-                // Smooth camera focus
                 controls.autoRotate = false;
                 new TWEEN.Tween(controls.target)
                     .to({ x: selected.position.x, y: selected.position.y, z: selected.position.z }, 1000)
@@ -794,20 +758,17 @@
             controls.autoRotate = true;
         });
 
-        // Window Resize
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Animation Loop
         function animate(time) {
             requestAnimationFrame(animate);
             TWEEN.update();
             controls.update();
 
-            // Self-rotate spheres slowly
             bloggerMeshes.forEach(m => {
                 m.rotation.y += 0.008;
             });

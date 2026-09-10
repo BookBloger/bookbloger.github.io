@@ -114,6 +114,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .back-btn {
@@ -137,20 +139,25 @@
             transform: translateX(4px);
         }
 
+        .top-links-group {
+            display: flex;
+            gap: 8px;
+        }
+
         .top-posts-link {
-            color: #f472b6;
+            color: #38bdf8;
             text-decoration: none;
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 700;
-            background: rgba(236, 72, 153, 0.15);
-            border: 1px solid rgba(236, 72, 153, 0.35);
-            padding: 8px 14px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 8px 12px;
             border-radius: 10px;
             transition: all 0.2s;
         }
 
         .top-posts-link:hover {
-            background: rgba(236, 72, 153, 0.25);
+            background: rgba(56, 189, 248, 0.22);
         }
 
         .profile-header {
@@ -555,20 +562,20 @@
             transition: all 0.2s;
         }
 
-        .contact-btn-tg {
-            background: #229ED9;
+        .contact-btn-group {
+            background: linear-gradient(135deg, #229ED9 0%, #0284c7 100%);
             color: #fff;
+        }
+
+        .contact-btn-tg {
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
         }
 
         .contact-btn-ig {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #fff;
-        }
-
-        .contact-btn-mail {
-            background: #334155;
-            color: #38bdf8;
-            border: 1px solid #475569;
         }
 
         footer {
@@ -577,6 +584,25 @@
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             font-size: 12.5px;
+        }
+
+        .footer-links {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
         }
 
         @media (max-width: 640px) {
@@ -627,9 +653,17 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             بازگشت به دایرکتوری اصلی
         </a>
-        <a href="../top-posts.html" class="top-posts-link">
-            🔥 ۱۰ پست برتر و وایرال بوک‌بلاگرها
-        </a>
+        <div class="top-links-group">
+            <a href="https://t.me/bookblogersiran" target="_blank" rel="noopener noreferrer" class="top-posts-link" style="color:#38bdf8; border-color:#229ED9;">
+                👥 گروه تلگرام (t.me/bookblogersiran)
+            </a>
+            <a href="../top-posts.html" class="top-posts-link">
+                🔥 ۱۰ پست برتر
+            </a>
+            <a href="../top-100-posts.html" class="top-posts-link">
+                🏆 ۱۰۰ پست برتر
+            </a>
+        </div>
     </div>
 
     <div class="profile-header">
@@ -887,16 +921,27 @@
     <div class="campaign-section">
         <div class="campaign-badge">🚀 اجرای کمپین و روابط عمومی</div>
         <h2 class="campaign-title">هماهنگی و اجرای کمپین با neginbook</h2>
-        <p class="campaign-desc">برای هماهنگی تبلیغات، ارسال کتاب، نقد و بررسی و اجرای کمپین‌های هدفمند با این بلاگر با مدیریت <b>ریک سانچز</b> در ارتباط باشید.</p>
+        <p class="campaign-desc">برای هماهنگی تبلیغات، ارسال کتاب، نقد و بررسی و اجرای کمپین‌های هدفمند با این بلاگر با مدیریت <b>ریک سانچز</b> در ارتباط باشید یا در گروه بوک‌بلاگرها مطرح کنید.</p>
         <div class="contact-buttons">
+            <a href="https://t.me/bookblogersiran" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-group">👥 گروه تلگرام: t.me/bookblogersiran</a>
             <a href="https://t.me/m4tinbeigipv" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-tg">تلگرام: @m4tinbeigipv</a>
             <a href="https://instagram.com/m4tinbeigi" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ig">اینستاگرام: @m4tinbeigi</a>
-            <a href="mailto:m4tinbeigi@gmail.com" class="contact-btn contact-btn-mail">m4tinbeigi@gmail.com</a>
         </div>
     </div>
 
     <footer>
         <p>گردآوری، تحلیل داده و مدیریت: <b>ریک سانچز (Rick Sanchez)</b> | دایرکتوری بوک‌بلاگرها</p>
+        <div class="footer-links">
+            <a href="https://t.me/bookblogersiran" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-weight:700;">👥 گروه تلگرام (t.me/bookblogersiran)</a>
+            <span>•</span>
+            <a href="../3d.html">🌌 کهکشان سه‌بعدی</a>
+            <span>•</span>
+            <a href="../top-posts.html">🔥 ۱۰ پست برتر</a>
+            <span>•</span>
+            <a href="../top-100-posts.html">🏆 ۱۰۰ پست برتر</a>
+            <span>•</span>
+            <a href="../sitemap.xml">نقشه سایت</a>
+        </div>
     </footer>
 </div>
 </body>
