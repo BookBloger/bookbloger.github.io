@@ -1,0 +1,56 @@
+name: BookBloggers Coordinator Runner
+
+on:
+  repository_dispatch:
+    types: [nooshin_action]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'sync'
+      handle:
+        description: 'Blogger handle'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run action script
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_GROUP_ID: ${{ secrets.TELEGRAM_GROUP_ID }}
+          BOXAPI_AUTH: ${{ secrets.BOXAPI_AUTH }}
+          RAW_ACTION: ${{ github.event.client_payload.action || github.event.inputs.action }}
+          RAW_HANDLE: ${{ github.event.client_payload.handle || github.event.inputs.handle }}
+        run: |
+          python scripts/process_action.py --action "$RAW_ACTION" --handle "$RAW_HANDLE"
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "BookBloggers Bot"
+          git config --global user.email "bot@bookbloger.github.io"
+          git add .
+          if ! git diff --staged --quiet; then
+            git commit -m "auto(bot): executed action from coordinator"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi
