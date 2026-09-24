@@ -8,6 +8,7 @@ import json
 import argparse
 import urllib.request
 import subprocess
+import re
 
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSON_PATH = os.path.join(REPO_DIR, "instagram_book_bloggers_analytics_rich.json")
@@ -71,8 +72,9 @@ def run_builders():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--action", required=True, choices=["add", "update", "sync"])
+    parser.add_argument("--action", required=True, choices=["add", "update", "sync", "rate"])
     parser.add_argument("--handle", default="")
+    parser.add_argument("--pricing", default="")
     args = parser.parse_args()
 
     handle = args.handle.strip().lstrip("@")
@@ -157,6 +159,56 @@ def main():
     elif args.action == "sync":
         run_builders()
         send_tg_message(f"دایرکتوری بوک‌بلاگرها با موفقیت همگام‌سازی و منتشر شد 🤍\nتعداد کل بلاگرها: {len(bloggers)}")
+
+    elif args.action == "rate":
+        if not handle:
+            print("Handle is required for rate")
+            sys.exit(1)
+
+        raw_pricing = args.pricing.strip()
+        story = "استعلام اختصاصی"
+        reels = "استعلام اختصاصی"
+        package = "هماهنگی اختصاصی"
+        note = "تعرفه تاییدشده توسط نوشین ناصری"
+
+        m_story = re.search(r'استوری\s*[:\-]?\s*([^\n,|]+)', raw_pricing)
+        if m_story:
+            story = m_story.group(1).strip()
+
+        m_reels = re.search(r'(?:ریلز|پست)\s*[:\-]?\s*([^\n,|]+)', raw_pricing)
+        if m_reels:
+            reels = m_reels.group(1).strip()
+
+        m_pkg = re.search(r'پکیج\s*[:\-]?\s*([^\n,|]+)', raw_pricing)
+        if m_pkg:
+            package = m_pkg.group(1).strip()
+
+        if story == "استعلام اختصاصی" and reels == "استعلام اختصاصی" and package == "هماهنگی اختصاصی" and raw_pricing:
+            story = raw_pricing
+
+        pricing_file = os.path.join(REPO_DIR, "pricing_database.json")
+        pricing_data = {}
+        if os.path.exists(pricing_file):
+            try:
+                with open(pricing_file, "r", encoding="utf-8") as f:
+                    pricing_data = json.load(f)
+            except Exception:
+                pass
+
+        pricing_data[handle.lower()] = {
+            "story": story,
+            "reels": reels,
+            "package": package,
+            "verified": True,
+            "note": note
+        }
+
+        with open(pricing_file, "w", encoding="utf-8") as f:
+            json.dump(pricing_data, f, ensure_ascii=False, indent=2)
+
+        run_builders()
+        send_tg_message(f"تعرفه پیج @{handle} با موفقیت ثبت و منتشر شد 🤍\n\n• استوری: {story}\n• ریلز / پست: {reels}\n• پکیج: {package}\n• لینک تعرفه‌ها: https://bookbloger.github.io/pricing-table.html\n• لینک صفحه اختصاصی: https://bookbloger.github.io/blogger/{handle.lower()}.html")
+
 
 
 if __name__ == "__main__":

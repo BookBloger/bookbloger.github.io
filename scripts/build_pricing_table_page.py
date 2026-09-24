@@ -9,7 +9,17 @@ OUTPUT_HTML = os.path.join(REPO_DIR, "pricing-table.html")
 GOOGLE_META = '<meta name="google-site-verification" content="1bSuT-QoDy7ukGYtf0DVP8jBzHzIhxEqGPHMJVxjD94" />'
 
 # Specific explicit verified pricing database
-EXPLICIT_RATES = {
+EXPLICIT_RATES = {}
+PRICING_FILE = os.path.join(REPO_DIR, "pricing_database.json")
+if os.path.exists(PRICING_FILE):
+    try:
+        with open(PRICING_FILE, "r", encoding="utf-8") as f:
+            EXPLICIT_RATES = json.load(f)
+    except Exception as e:
+        print(f"Error loading pricing_database.json: {e}")
+
+if not EXPLICIT_RATES:
+    EXPLICIT_RATES = {
     'aqaye.ketab': {
         'story': 'استعلام اختصاصی',
         'reels': 'استعلام اختصاصی',

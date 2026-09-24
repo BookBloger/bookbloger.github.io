@@ -15,6 +15,15 @@ with open(os.path.join(REPO_DIR, "all_users_posts_map.json"), 'r', encoding='utf
 with open(os.path.join(REPO_DIR, "instagram_book_bloggers_analytics_rich.json"), 'r', encoding='utf-8') as f:
     bloggers_rich = json.load(f)
 
+pricing_db = {}
+pricing_db_file = os.path.join(REPO_DIR, "pricing_database.json")
+if os.path.exists(pricing_db_file):
+    try:
+        with open(pricing_db_file, "r", encoding="utf-8") as f:
+            pricing_db = json.load(f)
+    except Exception as e:
+        print(f"Error loading pricing_database.json: {e}")
+
 pricing_dict = {
     '_cherryremi': """
         <div class="pricing-card">
@@ -776,11 +785,38 @@ for rank, b in enumerate(sorted_bloggers, 1):
     tier = b.get('influencer_tier', 'میکرو بوک‌بلاگر')
     aud_prof = b.get('audience_profile', 'مخاطبان علاقه‌مند به کتاب و ادبیات داستانی.')
     
-    pricing_html = pricing_dict.get(slug, """
+    pricing_html = pricing_dict.get(slug)
+    if not pricing_html and slug in pricing_db and pricing_db[slug].get('verified'):
+        p = pricing_db[slug]
+        pricing_html = f"""
+        <div class="pricing-card">
+            <h3>📖 پکیج‌ها و تعرفه‌های رسمی {name}</h3>
+            <h3 style="margin-top: 15px;">📱 تعرفه تبلیغات استوری (۲۴ ساعته)</h3>
+            <ul class="pricing-list">
+                <li><span>تبلیغات استوری:</span> <b>{p.get('story', 'استعلام اختصاصی')}</b></li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">🎬 تعرفه ریلز و پست فید (دائمی)</h3>
+            <ul class="pricing-list">
+                <li><span>ریلز ویدیویی / پست فید:</span> <b>{p.get('reels', 'استعلام اختصاصی')}</b></li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">📦 پکیج‌های پیشنهادی همکاری</h3>
+            <div class="package-item">
+                <div class="pkg-header">
+                    <span class="pkg-title">پکیج ویژه همکاری</span>
+                    <span class="pkg-price">{p.get('package', 'توافقی')}</span>
+                </div>
+                <p class="pkg-desc">{p.get('note', 'تاییدشده توسط هماهنگ‌کننده بوک‌بلاگرها')}</p>
+            </div>
+        </div>
+        """
+    if not pricing_html:
+        pricing_html = """
         <div class="pricing-card empty-pricing">
             <p style="color: #94a3b8; font-size: 14px;">تعرفه رسمی این پیج پس از تایید هماهنگ‌کننده ثبت خواهد شد. برای استعلام مستقیم قیمت، بررسی پکیج‌های موجود و رزرو کمپین با <b>ریک سانچز</b> در ارتباط باشید.</p>
         </div>
-    """)
+        """
     
     rank_label = f"رتبه #{rank} در میان بوک‌بلاگرهای برتر"
     if rank == 1:

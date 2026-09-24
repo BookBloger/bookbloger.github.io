@@ -40,8 +40,9 @@ jobs:
           BOXAPI_AUTH: ${{ secrets.BOXAPI_AUTH }}
           RAW_ACTION: ${{ github.event.client_payload.action || github.event.inputs.action }}
           RAW_HANDLE: ${{ github.event.client_payload.handle || github.event.inputs.handle }}
+          RAW_PRICING: ${{ github.event.client_payload.pricing || '' }}
         run: |
-          python scripts/process_action.py --action "$RAW_ACTION" --handle "$RAW_HANDLE"
+          python scripts/process_action.py --action "$RAW_ACTION" --handle "$RAW_HANDLE" --pricing "$RAW_PRICING"
 
       - name: Commit and push changes
         run: |
