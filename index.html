@@ -1029,6 +1029,337 @@
                 padding: 10px 6px;
             }
         }
+    
+        /* Enhanced 6-Col Stats Banner */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            max-width: 1020px;
+            margin: 0 auto 24px;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 12px 6px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-box .num {
+            font-size: clamp(15px, 2.2vw, 21px);
+            font-weight: 900;
+            color: #38bdf8;
+            letter-spacing: 0;
+        }
+
+        .stat-box.highlight-box .num {
+            color: #fbbf24;
+        }
+
+        .stat-box.micro-box .num {
+            color: #34d399;
+        }
+
+        .stat-box.macro-box .num {
+            color: #a78bfa;
+        }
+
+        .stat-box .label {
+            font-size: 10.5px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Ecosystem Comparison Hub */
+        .ecosystem-container {
+            max-width: 1020px;
+            margin: 0 auto 28px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .eco-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px 18px;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+
+        .eco-card.micro {
+            border-right: 4px solid #10b981;
+        }
+
+        .eco-card.macro {
+            border-right: 4px solid #8b5cf6;
+        }
+
+        .eco-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .eco-title {
+            font-size: 14px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #f8fafc;
+        }
+
+        .eco-badge {
+            font-size: 10.5px;
+            padding: 2px 9px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .eco-badge.micro {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .eco-badge.macro {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .eco-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .eco-m-val {
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #f1f5f9;
+        }
+
+        .eco-m-lbl {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .eco-desc {
+            font-size: 11.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Leaderboard & Tabs */
+        .leaderboard-section {
+            max-width: 1020px;
+            margin: 0 auto 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 20px;
+        }
+
+        .lb-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .lb-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tier-tabs {
+            display: flex;
+            gap: 6px;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .tier-tab-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tier-tab-btn.active {
+            background: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+        }
+
+        .lb-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .lb-column {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .lb-col-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #e2e8f0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .lb-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 4px;
+            border-radius: 6px;
+            transition: background 0.15s;
+        }
+
+        .lb-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .lb-user-info {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .lb-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lb-name {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .lb-handle {
+            font-size: 9.5px;
+            color: #94a3b8;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .lb-val-badge {
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 5px;
+            direction: ltr;
+        }
+
+        .val-badge-gold {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .val-badge-green {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .val-badge-blue {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* Controls & Filter Buttons */
+        .controls-wrapper {
+            max-width: 650px;
+            margin: 0 auto 28px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: #cbd5e1;
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        .filter-btn.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+        }
+
     </style>
 </head>
 <body>
@@ -1084,31 +1415,328 @@
     </div>
 
     <!-- Stats Banner -->
+        <!-- Comprehensive Stats Banner (6-Col) -->
     <div class="stats-banner">
         <div class="stat-box highlight-box">
             <div class="num">+2.73M</div>
-            <div class="label">مجموع کل فالوورها (2,733,048)</div>
+            <div class="label">مجموع کل مخاطبان (2,733,048)</div>
         </div>
         <div class="stat-box">
             <div class="num">57</div>
-            <div class="label">تعداد کل پیج‌ها</div>
+            <div class="label">تعداد کل بوک‌بلاگرها</div>
         </div>
-        <div class="stat-box">
-            <div class="num">558K</div>
-            <div class="label">بیشترین فالوور پیج (<a href="blogger/aqaye.ketab.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">@aqaye.ketab</a>)</div>
+        <div class="stat-box micro-box">
+            <div class="num">46 پیج</div>
+            <div class="label">دسته زیر 60K (۵۶۱,۷۴۸ مخاطب)</div>
+        </div>
+        <div class="stat-box macro-box">
+            <div class="num">11 پیج</div>
+            <div class="label">دسته بالای 60K (۲,۱۷۱,۳۰۰ مخاطب)</div>
         </div>
         <div class="stat-box">
             <div class="num">11,489</div>
-            <div class="label">مجموع محتوا و پست‌ها</div>
+            <div class="label">مجموع پست‌ها و ریلزها</div>
+        </div>
+        <div class="stat-box highlight-box">
+            <div class="num">2.47M</div>
+            <div class="label">رکورد بازدید ریلز (@artemisbook)</div>
         </div>
     </div>
 
-    <div class="controls">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 جستجو بر اساس نام یا آیدی بلاگر...">
+    <!-- Ecosystem Insights & Comparison -->
+    <div class="ecosystem-container">
+        <div class="eco-card micro">
+            <div class="eco-header">
+                <div class="eco-title">
+                    <span>🌱 اکوسیستم بلاگرهای تخصصی</span>
+                </div>
+                <span class="eco-badge micro">زیر 60 هزار فالوور</span>
+            </div>
+            <div class="eco-metrics">
+                <div>
+                    <div class="eco-m-val">46 پیج</div>
+                    <div class="eco-m-lbl">تعداد بلاگرها</div>
+                </div>
+                <div>
+                    <div class="eco-m-val">561,748</div>
+                    <div class="eco-m-lbl">مجموع مخاطب</div>
+                </div>
+                <div>
+                    <div class="eco-m-val">6.8% - 12%</div>
+                    <div class="eco-m-lbl">میانگین تعامل (ER)</div>
+                </div>
+            </div>
+            <div class="eco-desc">
+                این دسته دارای بالاترین عمق تعامل با کتاب‌خوان‌های واقعی، بالاترین نرخ تبدیل خرید مستقیم، نرخ بازگشت سرمایه ایده‌آل و پتانسیل وایرال تا ۲.۴۷ میلیون بازدید ریلز هستند.
+            </div>
+        </div>
+
+        <div class="eco-card macro">
+            <div class="eco-header">
+                <div class="eco-title">
+                    <span>🚀 اکوسیستم کلان‌بلاگرها</span>
+                </div>
+                <span class="eco-badge macro">بالای 60 هزار فالوور</span>
+            </div>
+            <div class="eco-metrics">
+                <div>
+                    <div class="eco-m-val">11 پیج</div>
+                    <div class="eco-m-lbl">تعداد بلاگرها</div>
+                </div>
+                <div>
+                    <div class="eco-m-val">2,171,300</div>
+                    <div class="eco-m-lbl">مجموع مخاطب</div>
+                </div>
+                <div>
+                    <div class="eco-m-val">197.4K</div>
+                    <div class="eco-m-lbl">میانگین فالوور هر پیج</div>
+                </div>
+            </div>
+            <div class="eco-desc">
+                پوشش‌دهنده ۷۹.۴٪ از کل جامعه مخاطبان کتاب؛ گزینه‌ای فوق‌العاده برای کمپین‌های کلان آگاهی از برند، معرفی پرفروش‌های نشر، رونمایی جشن امضا و ترندسازی سراسری.
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard / Top Performers -->
+    <div class="leaderboard-section">
+        <div class="lb-head">
+            <div class="lb-title">
+                <span>🏆 تابلوی افتخار و برترین‌های عملکرد</span>
+            </div>
+            <div class="tier-tabs">
+                <button type="button" class="tier-tab-btn active" onclick="switchLeaderboard('micro', this)">زیر 60K (۴۶ پیج)</button>
+                <button type="button" class="tier-tab-btn" onclick="switchLeaderboard('macro', this)">بالای 60K (۱۱ پیج)</button>
+            </div>
+        </div>
+
+        <div class="lb-grids-container">
+            <!-- Micro Leaderboard Grid -->
+            <div class="lb-grid" id="lb-micro">
+                <div class="lb-column">
+                    <div class="lb-col-title">👥 بیشترین فالوور (زیر 60K)</div>
+                    <div class="lb-item">
+                        <a href="blogger/roxanaabasian.html" class="lb-user-info">
+                            <img src="avatars/roxanaabasian.jpg" class="lb-avatar" alt="رکسانا عباسیان" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">رکسانا عباسیان</div>
+                                <div class="lb-handle">@roxanaabasian</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">50.7K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/maryamaamalii.html" class="lb-user-info">
+                            <img src="avatars/maryamaamalii.jpg" class="lb-avatar" alt="مریم آملی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">مریم آملی</div>
+                                <div class="lb-handle">@maryamaamalii</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">50.1K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/shiva_bookworm.html" class="lb-user-info">
+                            <img src="avatars/shiva_bookworm.jpg" class="lb-avatar" alt="شیوا بوک‌ورم" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">شیوا بوک‌ورم</div>
+                                <div class="lb-handle">@shiva_bookworm</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">43.5K</span>
+                    </div>
+                </div>
+
+                <div class="lb-column">
+                    <div class="lb-col-title">📈 بیشترین رشد دوره‌ای</div>
+                    <div class="lb-item">
+                        <a href="blogger/roxanaabasian.html" class="lb-user-info">
+                            <img src="avatars/roxanaabasian.jpg" class="lb-avatar" alt="رکسانا عباسیان" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">رکسانا عباسیان</div>
+                                <div class="lb-handle">@roxanaabasian</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-green">+2,700</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/nooshinaseri.html" class="lb-user-info">
+                            <img src="avatars/nooshinaseri.jpg" class="lb-avatar" alt="نوشین ناصری" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">نوشین ناصری</div>
+                                <div class="lb-handle">@nooshinaseri</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-green">+2,166</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/saghaaal.html" class="lb-user-info">
+                            <img src="avatars/saghaaal.jpg" class="lb-avatar" alt="ساقی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">ساقی</div>
+                                <div class="lb-handle">@saghaaal</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-green">+1,588</span>
+                    </div>
+                </div>
+
+                <div class="lb-column">
+                    <div class="lb-col-title">🎬 پربازدیدترین ریلزها</div>
+                    <div class="lb-item">
+                        <a href="blogger/artemisbook.html" class="lb-user-info">
+                            <img src="avatars/artemisbook.jpg" class="lb-avatar" alt="آرتمیس بوک" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">آرتمیس بوک</div>
+                                <div class="lb-handle">@artemisbook</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">2.47M ویو</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/nooshinaseri.html" class="lb-user-info">
+                            <img src="avatars/nooshinaseri.jpg" class="lb-avatar" alt="نوشین ناصری" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">نوشین ناصری</div>
+                                <div class="lb-handle">@nooshinaseri</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">170.6K ویو</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/_cherryremi.html" class="lb-user-info">
+                            <img src="avatars/_cherryremi.jpg" class="lb-avatar" alt="گیلاس خانم" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">گیلاس خانم</div>
+                                <div class="lb-handle">@_cherryremi</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">170.3K ویو</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Macro Leaderboard Grid -->
+            <div class="lb-grid" id="lb-macro" style="display: none;">
+                <div class="lb-column">
+                    <div class="lb-col-title">👥 بیشترین فالوور (بالای 60K)</div>
+                    <div class="lb-item">
+                        <a href="blogger/aqaye.ketab.html" class="lb-user-info">
+                            <img src="avatars/aqaye.ketab.jpg" class="lb-avatar" alt="آقای کتاب" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">آقای کتاب</div>
+                                <div class="lb-handle">@aqaye.ketab</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">558K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/saraybook.html" class="lb-user-info">
+                            <img src="avatars/saraybook.jpg" class="lb-avatar" alt="سرای بوک" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">سرای بوک</div>
+                                <div class="lb-handle">@saraybook</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">339K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/datoverse.html" class="lb-user-info">
+                            <img src="avatars/datoverse.jpg" class="lb-avatar" alt="داتورس" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">داتورس</div>
+                                <div class="lb-handle">@datoverse</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">315K</span>
+                    </div>
+                </div>
+
+                <div class="lb-column">
+                    <div class="lb-col-title">🎬 پربازدیدترین ریلزها</div>
+                    <div class="lb-item">
+                        <a href="blogger/parham.hami.html" class="lb-user-info">
+                            <img src="avatars/parham.hami.jpg" class="lb-avatar" alt="پرهام حامی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">پرهام حامی</div>
+                                <div class="lb-handle">@parham.hami</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">493.8K ویو</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/datoverse.html" class="lb-user-info">
+                            <img src="avatars/datoverse.jpg" class="lb-avatar" alt="داتورس" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">داتورس</div>
+                                <div class="lb-handle">@datoverse</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">438.6K ویو</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/acal.madahi.html" class="lb-user-info">
+                            <img src="avatars/acal.madahi.jpg" class="lb-avatar" alt="عسل مداحی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">عسل مداحی</div>
+                                <div class="lb-handle">@acal.madahi</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-blue">270.9K ویو</span>
+                    </div>
+                </div>
+
+                <div class="lb-column">
+                    <div class="lb-col-title">⭐ جامعه پیشگام ماکرو</div>
+                    <div class="lb-item">
+                        <a href="blogger/mohammadzaabihi.html" class="lb-user-info">
+                            <img src="avatars/mohammadzaabihi.jpg" class="lb-avatar" alt="محمد ذبیحی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">محمد ذبیحی</div>
+                                <div class="lb-handle">@mohammadzaabihi</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">141K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/ketab.khaan.html" class="lb-user-info">
+                            <img src="avatars/ketab.khaan.jpg" class="lb-avatar" alt="کتاب‌خوان" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">کتاب‌خوان</div>
+                                <div class="lb-handle">@ketab.khaan</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">102K</span>
+                    </div>
+                    <div class="lb-item">
+                        <a href="blogger/hadii.karimii.html" class="lb-user-info">
+                            <img src="avatars/hadii.karimii.jpg" class="lb-avatar" alt="هادی کریمی" onerror="this.src='avatars/default.jpg'">
+                            <div>
+                                <div class="lb-name">هادی کریمی</div>
+                                <div class="lb-handle">@hadii.karimii</div>
+                            </div>
+                        </a>
+                        <span class="lb-val-badge val-badge-gold">95.4K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls & Interactive Filters -->
+    <div class="controls-wrapper">
+        <div class="filter-buttons">
+            <button type="button" class="filter-btn active" data-filter="all" onclick="filterTier('all', this)">همه بوک‌بلاگرها (۵۷)</button>
+            <button type="button" class="filter-btn" data-filter="micro" onclick="filterTier('micro', this)">پیج‌های زیر 60K (۴۶)</button>
+            <button type="button" class="filter-btn" data-filter="macro" onclick="filterTier('macro', this)">کلان‌بلاگرهای بالای 60K (۱۱)</button>
+        </div>
+        <div class="controls" style="margin: 0;">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 جستجو بر اساس نام یا آیدی بلاگر...">
+        </div>
     </div>
 
     <div class="grid" id="bloggersGrid">
-        <div class="card" data-name="آقای کتاب aqaye.ketab" data-followers="558000.0">
+        <div class="card" data-tier="macro" data-name="آقای کتاب aqaye.ketab" data-followers="558000.0">
             <div class="rank-badge rank-1">🥇 رتبه ۱</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1148,7 +1776,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سارا سیرجانی saraybook" data-followers="339000.0">
+        <div class="card" data-tier="macro" data-name="سارا سیرجانی saraybook" data-followers="339000.0">
             <div class="rank-badge rank-2">🥈 رتبه ۲</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1188,7 +1816,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کتاب/رمان/مانگا | داتورس datoverse" data-followers="315000.0">
+        <div class="card" data-tier="macro" data-name="کتاب/رمان/مانگا | داتورس datoverse" data-followers="315000.0">
             <div class="rank-badge rank-3">🥉 رتبه ۳</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1228,7 +1856,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="محمد ذبیحی mohammadzaabihi" data-followers="226000.0">
+        <div class="card" data-tier="macro" data-name="محمد ذبیحی mohammadzaabihi" data-followers="226000.0">
             <div class="rank-badge">#4</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1268,7 +1896,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پراگما/ابوالفضل ثابت مقدم/کتاب/مروج ادبیات pragma_book" data-followers="216000.0">
+        <div class="card" data-tier="macro" data-name="پراگما/ابوالفضل ثابت مقدم/کتاب/مروج ادبیات pragma_book" data-followers="216000.0">
             <div class="rank-badge">#5</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1308,7 +1936,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="نرگس narges.book" data-followers="141000.0">
+        <div class="card" data-tier="macro" data-name="نرگس narges.book" data-followers="141000.0">
             <div class="rank-badge">#6</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1348,7 +1976,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="رضا | رندتوپیا (تفکر نقاد و آگاهی) rendtopia" data-followers="101700.0">
+        <div class="card" data-tier="macro" data-name="رضا | رندتوپیا (تفکر نقاد و آگاهی) rendtopia" data-followers="101700.0">
             <div class="rank-badge">#7</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1388,7 +2016,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer" data-followers="83000.0">
+        <div class="card" data-tier="macro" data-name="بهار میرترابی | Bahar Reviews baharthebookreviewer" data-followers="83000.0">
             <div class="rank-badge">#8</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1428,7 +2056,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi" data-followers="66000.0">
+        <div class="card" data-tier="macro" data-name="عسل | معرفی کتاب | پادکست | جستجوگر acal.madahi" data-followers="66000.0">
             <div class="rank-badge">#9</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1468,7 +2096,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بوک اسپوک | Book Spook book_spook" data-followers="64000.0">
+        <div class="card" data-tier="macro" data-name="بوک اسپوک | Book Spook book_spook" data-followers="64000.0">
             <div class="rank-badge">#10</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1508,7 +2136,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پرهام حامی | ادبیات، هنر، سینما parham.hami" data-followers="61600.0">
+        <div class="card" data-tier="macro" data-name="پرهام حامی | ادبیات، هنر، سینما parham.hami" data-followers="61600.0">
             <div class="rank-badge">#11</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1548,7 +2176,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian" data-followers="50700.0">
+        <div class="card" data-tier="micro" data-name="رکسانا|معرفی کتاب|گروه کتاب‌خوانی roxanaabasian" data-followers="50700.0">
             <div class="rank-badge">#12</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1588,7 +2216,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="مریم آمالی | آگاهی بخش maryamaamalii" data-followers="50100.0">
+        <div class="card" data-tier="micro" data-name="مریم آمالی | آگاهی بخش maryamaamalii" data-followers="50100.0">
             <div class="rank-badge">#13</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1628,7 +2256,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="شیوا | راوی داستان‌ها🪄|معرفی کتاب‌📚‌و.. shiva_bookworm" data-followers="43500.0">
+        <div class="card" data-tier="micro" data-name="شیوا | راوی داستان‌ها🪄|معرفی کتاب‌📚‌و.. shiva_bookworm" data-followers="43500.0">
             <div class="rank-badge">#14</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1668,7 +2296,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir" data-followers="43000.0">
+        <div class="card" data-tier="micro" data-name="سارا هوشمند | مروّج کتاب sarabooks.ir" data-followers="43000.0">
             <div class="rank-badge">#15</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1708,7 +2336,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="مروج کتاب  | میثاق misaghsdiary" data-followers="34000.0">
+        <div class="card" data-tier="micro" data-name="مروج کتاب  | میثاق misaghsdiary" data-followers="34000.0">
             <div class="rank-badge">#16</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1748,7 +2376,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book" data-followers="29000.0">
+        <div class="card" data-tier="micro" data-name="بوک بلاگر|بلاگر کتاب|توت فرنگی tootfarangi._.book" data-followers="29000.0">
             <div class="rank-badge">#17</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1788,7 +2416,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook" data-followers="28000.0">
+        <div class="card" data-tier="micro" data-name="گلاره یوسفی | مروّج کتاب📚 artemisbook" data-followers="28000.0">
             <div class="rank-badge">#18</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1828,7 +2456,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad" data-followers="21000.0">
+        <div class="card" data-tier="micro" data-name="شهرزاد داودی / بلاگر کتاب storyteller.shahrzad" data-followers="21000.0">
             <div class="rank-badge">#19</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1868,7 +2496,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book" data-followers="21000.0">
+        <div class="card" data-tier="micro" data-name="بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام | dreems_book" data-followers="21000.0">
             <div class="rank-badge">#20</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1908,7 +2536,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سـاقـی🌝 saghaaal" data-followers="18500.0">
+        <div class="card" data-tier="micro" data-name="سـاقـی🌝 saghaaal" data-followers="18500.0">
             <div class="rank-badge">#21</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1948,7 +2576,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="اسما | کتاب asma_vibe" data-followers="17800.0">
+        <div class="card" data-tier="micro" data-name="اسما | کتاب asma_vibe" data-followers="17800.0">
             <div class="rank-badge">#22</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -1988,7 +2616,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="رها فربدراد | معرفی کتاب raha_farbodrad" data-followers="16500.0">
+        <div class="card" data-tier="micro" data-name="رها فربدراد | معرفی کتاب raha_farbodrad" data-followers="16500.0">
             <div class="rank-badge">#23</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2028,7 +2656,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri" data-followers="16300.0">
+        <div class="card" data-tier="micro" data-name="جادوگر فانتزی | نوشین ناصری nooshinaseri" data-followers="16300.0">
             <div class="rank-badge">#24</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2068,7 +2696,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="Saba Samadi sabasamaadi" data-followers="16000.0">
+        <div class="card" data-tier="micro" data-name="Saba Samadi sabasamaadi" data-followers="16000.0">
             <div class="rank-badge">#25</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2108,7 +2736,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زهرا پناهی | مروج کتاب book_zarii" data-followers="16000.0">
+        <div class="card" data-tier="micro" data-name="زهرا پناهی | مروج کتاب book_zarii" data-followers="16000.0">
             <div class="rank-badge">#26</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2148,7 +2776,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="دنیای کتاب ماهی | معرفی کتاب 🐟 mahi_bookworld" data-followers="11800.0">
+        <div class="card" data-tier="micro" data-name="دنیای کتاب ماهی | معرفی کتاب 🐟 mahi_bookworld" data-followers="11800.0">
             <div class="rank-badge">#27</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2188,7 +2816,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="ملیکا|معرفی کتاب bookish_melika" data-followers="10000.0">
+        <div class="card" data-tier="micro" data-name="ملیکا|معرفی کتاب bookish_melika" data-followers="10000.0">
             <div class="rank-badge">#28</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2228,7 +2856,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زیبوکس | بلاگر کتاب📚 ziiboox" data-followers="9487.0">
+        <div class="card" data-tier="micro" data-name="زیبوکس | بلاگر کتاب📚 ziiboox" data-followers="9487.0">
             <div class="rank-badge">#29</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2268,7 +2896,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کیانا | معرفی کتاب kiana_am" data-followers="8848.0">
+        <div class="card" data-tier="micro" data-name="کیانا | معرفی کتاب kiana_am" data-followers="8848.0">
             <div class="rank-badge">#30</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2308,7 +2936,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بهار|کتاب booksbahar" data-followers="8459.0">
+        <div class="card" data-tier="micro" data-name="بهار|کتاب booksbahar" data-followers="8459.0">
             <div class="rank-badge">#31</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2348,7 +2976,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi" data-followers="8254.0">
+        <div class="card" data-tier="micro" data-name="نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد negarankarimi" data-followers="8254.0">
             <div class="rank-badge">#32</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2388,7 +3016,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="صدام کن لیلیث lilith.in.wonderland" data-followers="7414.0">
+        <div class="card" data-tier="micro" data-name="صدام کن لیلیث lilith.in.wonderland" data-followers="7414.0">
             <div class="rank-badge">#33</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2428,7 +3056,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi" data-followers="7300.0">
+        <div class="card" data-tier="micro" data-name="گیلاس خانم🍒|معرفی کتاب _cherryremi" data-followers="7300.0">
             <div class="rank-badge">#34</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2468,7 +3096,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زینب مهرنگ | ک مثل کتاب ke_mesle_ketab" data-followers="7092.0">
+        <div class="card" data-tier="micro" data-name="زینب مهرنگ | ک مثل کتاب ke_mesle_ketab" data-followers="7092.0">
             <div class="rank-badge">#35</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2508,7 +3136,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="ایاز | کتاب و سینما ayazreviews" data-followers="4917.0">
+        <div class="card" data-tier="micro" data-name="ایاز | کتاب و سینما ayazreviews" data-followers="4917.0">
             <div class="rank-badge">#36</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2548,7 +3176,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کتابخوان کوچک ketabkhan.koochak" data-followers="4809.0">
+        <div class="card" data-tier="micro" data-name="کتابخوان کوچک ketabkhan.koochak" data-followers="4809.0">
             <div class="rank-badge">#37</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2588,7 +3216,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="آرتادال•کتابخوان •راوی کتاب artadall" data-followers="4769.0">
+        <div class="card" data-tier="micro" data-name="آرتادال•کتابخوان •راوی کتاب artadall" data-followers="4769.0">
             <div class="rank-badge">#38</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2628,7 +3256,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="Mozhdeh | مژده mozhdeh_booklover" data-followers="4473.0">
+        <div class="card" data-tier="micro" data-name="Mozhdeh | مژده mozhdeh_booklover" data-followers="4473.0">
             <div class="rank-badge">#39</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2668,7 +3296,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="[ معرفی کتاب با کُرالیسم ] coralism" data-followers="4247.0">
+        <div class="card" data-tier="micro" data-name="[ معرفی کتاب با کُرالیسم ] coralism" data-followers="4247.0">
             <div class="rank-badge">#40</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2708,7 +3336,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="نگین negin_books" data-followers="4129.0">
+        <div class="card" data-tier="micro" data-name="نگین negin_books" data-followers="4129.0">
             <div class="rank-badge">#41</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2748,7 +3376,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads" data-followers="3823.0">
+        <div class="card" data-tier="micro" data-name="پریا|بلاگر کتاب|کتاب فروشی آنلاین pariaareads" data-followers="3823.0">
             <div class="rank-badge">#42</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2788,7 +3416,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books" data-followers="3816.0">
+        <div class="card" data-tier="micro" data-name="ریحانه| معرفی کتاب| ولاگ ryhn_books" data-followers="3816.0">
             <div class="rank-badge">#43</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2828,7 +3456,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="کتاب جان | تکه کتاب و رمان ketab_jaann" data-followers="3517.0">
+        <div class="card" data-tier="micro" data-name="کتاب جان | تکه کتاب و رمان ketab_jaann" data-followers="3517.0">
             <div class="rank-badge">#44</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2868,7 +3496,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm" data-followers="3426.0">
+        <div class="card" data-tier="micro" data-name="فاطمه ام | معرفی کتاب|روزمرگی fa_bookworm" data-followers="3426.0">
             <div class="rank-badge">#45</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2908,7 +3536,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="مارال | معرفی کتاب maral__book" data-followers="3149.0">
+        <div class="card" data-tier="micro" data-name="مارال | معرفی کتاب maral__book" data-followers="3149.0">
             <div class="rank-badge">#46</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2948,7 +3576,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بهار baharr.book" data-followers="3100.0">
+        <div class="card" data-tier="micro" data-name="بهار baharr.book" data-followers="3100.0">
             <div class="rank-badge">#47</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -2988,7 +3616,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa" data-followers="2739.0">
+        <div class="card" data-tier="micro" data-name="݊ꪀ𝑜ꪀ𝑎˖ ݁˖ imnon.aa" data-followers="2739.0">
             <div class="rank-badge">#48</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3028,7 +3656,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="سامان|معرفی کتاب و فیلم saman.reads" data-followers="2119.0">
+        <div class="card" data-tier="micro" data-name="سامان|معرفی کتاب و فیلم saman.reads" data-followers="2119.0">
             <div class="rank-badge">#49</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3068,7 +3696,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_" data-followers="1556.0">
+        <div class="card" data-tier="micro" data-name="زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄 zahrabook_" data-followers="1556.0">
             <div class="rank-badge">#50</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3108,7 +3736,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab" data-followers="1474.0">
+        <div class="card" data-tier="micro" data-name="دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد totfarangii_ketab" data-followers="1474.0">
             <div class="rank-badge">#51</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3148,7 +3776,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan" data-followers="1424.0">
+        <div class="card" data-tier="micro" data-name="دخترجان | کتاب | روزمرگی about_dokhtarjan" data-followers="1424.0">
             <div class="rank-badge">#52</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3188,7 +3816,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="گِرین💚 greenverse.book" data-followers="1355.0">
+        <div class="card" data-tier="micro" data-name="گِرین💚 greenverse.book" data-followers="1355.0">
             <div class="rank-badge">#53</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3228,7 +3856,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="بوکلی | معرفی کتاب my_bookly" data-followers="1183.0">
+        <div class="card" data-tier="micro" data-name="بوکلی | معرفی کتاب my_bookly" data-followers="1183.0">
             <div class="rank-badge">#54</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3268,7 +3896,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art" data-followers="1023.0">
+        <div class="card" data-tier="micro" data-name="جوی بوی | معرفی کتاب | یوتوبر joi_boy_art" data-followers="1023.0">
             <div class="rank-badge">#55</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3308,7 +3936,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="پرنیان آرین | معرفی کتاب parnianbook0" data-followers="515.0">
+        <div class="card" data-tier="micro" data-name="پرنیان آرین | معرفی کتاب parnianbook0" data-followers="515.0">
             <div class="rank-badge">#56</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3348,7 +3976,7 @@
                 </a>
             </div>
         </div>
-        <div class="card" data-name="neginbook negin_book" data-followers="131.0">
+        <div class="card" data-tier="micro" data-name="neginbook negin_book" data-followers="131.0">
             <div class="rank-badge">#57</div>
             <div class="card-main-content">
                 <div class="card-top">
@@ -3413,20 +4041,48 @@
 </div>
 
 <script>
+    let currentTier = 'all';
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card');
 
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+    function applyFilters() {
+        const query = (searchInput.value || '').toLowerCase().trim();
         cards.forEach(card => {
-            const text = card.getAttribute('data-name').toLowerCase();
-            if (text.includes(query)) {
+            const cardTier = card.getAttribute('data-tier') || 'micro';
+            const text = (card.getAttribute('data-name') || '').toLowerCase();
+            const matchesTier = (currentTier === 'all' || cardTier === currentTier);
+            const matchesSearch = (!query || text.includes(query));
+
+            if (matchesTier && matchesSearch) {
                 card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
             }
         });
-    });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    function filterTier(tier, btn) {
+        currentTier = tier;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        applyFilters();
+    }
+
+    function switchLeaderboard(tier, btn) {
+        document.querySelectorAll('.tier-tab-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        const microGrid = document.getElementById('lb-micro');
+        const macroGrid = document.getElementById('lb-macro');
+        if (tier === 'micro') {
+            microGrid.style.display = 'grid';
+            macroGrid.style.display = 'none';
+        } else {
+            microGrid.style.display = 'none';
+            macroGrid.style.display = 'grid';
+        }
+    }
 </script>
 </body>
 </html>
