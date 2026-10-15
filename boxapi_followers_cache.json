@@ -1,0 +1,591 @@
+{
+  "storyteller.shahrzad": {
+    "username": "storyteller.shahrzad",
+    "follower_count": 21433,
+    "media_count": 164,
+    "following_count": 164,
+    "full_name": "شهرزاد داودی / بلاگر کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "pariaareads": {
+    "username": "pariaareads",
+    "follower_count": 3810,
+    "media_count": 307,
+    "following_count": 913,
+    "full_name": "پریا|معرفی و فروش کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "mina.bookk": {
+    "username": "mina.bookk",
+    "follower_count": 3012,
+    "media_count": 329,
+    "following_count": 758,
+    "full_name": "MINA(book blogger)📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "saghaaal": {
+    "username": "saghaaal",
+    "follower_count": 19246,
+    "media_count": 192,
+    "following_count": 401,
+    "full_name": "سـاقـیِ کتاب🍷📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "artadall": {
+    "username": "artadall",
+    "follower_count": 4812,
+    "media_count": 114,
+    "following_count": 592,
+    "full_name": "آرتادال•کتابخوان •راوی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "dreems_book": {
+    "username": "dreems_book",
+    "follower_count": 20949,
+    "media_count": 388,
+    "following_count": 335,
+    "full_name": "بلاگر کتاب | معرفی کتاب | فروش کتاب | روزمرگی | بوکستاگرام |",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "sinmoruk": {
+    "username": "sinmoruk",
+    "follower_count": 21681,
+    "media_count": 299,
+    "following_count": 921,
+    "full_name": "پرناز بهزاد | سرگردان میان خیال و نوشتن",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "acal.madahi": {
+    "username": "acal.madahi",
+    "follower_count": 67424,
+    "media_count": 59,
+    "following_count": 949,
+    "full_name": "عسل | معرفی کتاب | پادکست | جستجوگر",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "imnon.aa": {
+    "username": "imnon.aa",
+    "follower_count": 2752,
+    "media_count": 26,
+    "following_count": 332,
+    "full_name": "݊ꪀ𝑜ꪀ𝑎˖ ݁˖",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "saman.reads": {
+    "username": "saman.reads",
+    "follower_count": 2938,
+    "media_count": 48,
+    "following_count": 234,
+    "full_name": "سامان هلمز|معرفی کتاب و فیلم",
+    "is_verified": false,
+    "success": true
+  },
+  "tootfarangi._.book": {
+    "username": "tootfarangi._.book",
+    "follower_count": 28907,
+    "media_count": 378,
+    "following_count": 452,
+    "full_name": "بوک بلاگر|بلاگر کتاب|توت فرنگی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "roxanaabasian": {
+    "username": "roxanaabasian",
+    "follower_count": 51089,
+    "media_count": 164,
+    "following_count": 467,
+    "full_name": "رکسانا|معرفی کتاب|گروه کتاب‌خوانی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "negin_books": {
+    "username": "negin_books",
+    "follower_count": 4843,
+    "media_count": 99,
+    "following_count": 175,
+    "full_name": "نگین | معرفی و پیشنهاد کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "_cherryremi": {
+    "username": "_cherryremi",
+    "follower_count": 7295,
+    "media_count": 55,
+    "following_count": 262,
+    "full_name": "گیلاس خانم🍒|معرفی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "sarabooks.ir": {
+    "username": "sarabooks.ir",
+    "follower_count": 45450,
+    "media_count": 231,
+    "following_count": 926,
+    "full_name": "سارا هوشمند | مروّج کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "lilith.in.wonderland": {
+    "username": "lilith.in.wonderland",
+    "follower_count": 7534,
+    "media_count": 61,
+    "following_count": 64,
+    "full_name": "صدام کن لیلیث",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "totfarangii_ketab": {
+    "username": "totfarangii_ketab",
+    "follower_count": 1464,
+    "media_count": 52,
+    "following_count": 520,
+    "full_name": "دختر توت‌فرنگی | دنیای کتاب‌ها | معرفی و نقد",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "negarankarimi": {
+    "username": "negarankarimi",
+    "follower_count": 10234,
+    "media_count": 75,
+    "following_count": 524,
+    "full_name": "نگار‌کریمی | تسهیلگر |  جست‌وجوگرِ یادگیری و‌ رشد",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "mozhdeh_booklover": {
+    "username": "mozhdeh_booklover",
+    "follower_count": 9588,
+    "media_count": 81,
+    "following_count": 534,
+    "full_name": "Mozhdeh | مژده",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "sabasamaadi": {
+    "username": "sabasamaadi",
+    "follower_count": 16027,
+    "media_count": 166,
+    "following_count": 352,
+    "full_name": "Saba Samadi",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "misaghsdiary": {
+    "username": "misaghsdiary",
+    "follower_count": 34095,
+    "media_count": 91,
+    "following_count": 416,
+    "full_name": "مروج کتاب  | میثاق",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "kiana_am": {
+    "username": "kiana_am",
+    "follower_count": 9180,
+    "media_count": 237,
+    "following_count": 806,
+    "full_name": "کیانا | معرفی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "book_spook": {
+    "username": "book_spook",
+    "follower_count": 63483,
+    "media_count": 233,
+    "following_count": 595,
+    "full_name": "بوک اسپوک | Book Spook",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "coralism": {
+    "username": "coralism",
+    "follower_count": 4350,
+    "media_count": 280,
+    "following_count": 797,
+    "full_name": "[ معرفی کتاب با کُرالیسم ]",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "bookish_melika": {
+    "username": "bookish_melika",
+    "follower_count": 10714,
+    "media_count": 226,
+    "following_count": 391,
+    "full_name": "ملیکا|معرفی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "artemisbook": {
+    "username": "artemisbook",
+    "follower_count": 28669,
+    "media_count": 72,
+    "following_count": 361,
+    "full_name": "گلاره یوسفی | مروّج کتاب📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "negin_book": {
+    "username": "negin_book",
+    "follower_count": 130,
+    "media_count": 15,
+    "following_count": 720,
+    "full_name": "neginbook",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "nooshinaseri": {
+    "username": "nooshinaseri",
+    "follower_count": 17890,
+    "media_count": 162,
+    "following_count": 1285,
+    "full_name": "جادوگر فانتزی | نوشین ناصری",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ziiboox": {
+    "username": "ziiboox",
+    "follower_count": 11543,
+    "media_count": 119,
+    "following_count": 444,
+    "full_name": "زیبوکس | دخترک کتابخون👩🏻‍🦳📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "about_dokhtarjan": {
+    "username": "about_dokhtarjan",
+    "follower_count": 1453,
+    "media_count": 70,
+    "following_count": 254,
+    "full_name": "دخترجان | بوک بلاگر | روزمرگی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "booksbahar": {
+    "username": "booksbahar",
+    "follower_count": 8624,
+    "media_count": 61,
+    "following_count": 340,
+    "full_name": "بهار|کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "joi_boy_art": {
+    "username": "joi_boy_art",
+    "follower_count": 2431,
+    "media_count": 60,
+    "following_count": 699,
+    "full_name": "جوی بوی | معرفی کتاب | یوتوبر",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "fa_bookworm": {
+    "username": "fa_bookworm",
+    "follower_count": 3591,
+    "media_count": 164,
+    "following_count": 662,
+    "full_name": "فاطمه ام | معرفی کتاب|روزمرگی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "zahrabook_": {
+    "username": "zahrabook_",
+    "follower_count": 1554,
+    "media_count": 145,
+    "following_count": 455,
+    "full_name": "زهـــرا | معرفی کتاب | فیلم و سریال 📚🪄",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "greenverse.book": {
+    "username": "greenverse.book",
+    "follower_count": 2188,
+    "media_count": 52,
+    "following_count": 272,
+    "full_name": "گِرین💚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ketabkhan.koochak": {
+    "username": "ketabkhan.koochak",
+    "follower_count": 4874,
+    "media_count": 65,
+    "following_count": 550,
+    "full_name": "کتابخوان کوچک",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ryhn_books": {
+    "username": "ryhn_books",
+    "follower_count": 4591,
+    "media_count": 138,
+    "following_count": 300,
+    "full_name": "ریحانه| معرفی کتاب| ولاگ",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "baharthebookreviewer": {
+    "username": "baharthebookreviewer",
+    "follower_count": 83307,
+    "media_count": 416,
+    "following_count": 1213,
+    "full_name": "بهار میرترابی | Bahar Reviews",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "pragma_book": {
+    "username": "pragma_book",
+    "follower_count": 215384,
+    "media_count": 205,
+    "following_count": 165,
+    "full_name": "پراگما/ابوالفضل ثابت مقدم/کتاب/مروج ادبیات",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "maryamaamalii": {
+    "username": "maryamaamalii",
+    "follower_count": 51641,
+    "media_count": 114,
+    "following_count": 252,
+    "full_name": "مریم آمالی|آگاهی بخش",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "datoverse": {
+    "username": "datoverse",
+    "follower_count": 313774,
+    "media_count": 211,
+    "following_count": 147,
+    "full_name": "کتاب/رمان/مانگا",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ketab_jaann": {
+    "username": "ketab_jaann",
+    "follower_count": 3539,
+    "media_count": 238,
+    "following_count": 225,
+    "full_name": "معرفی کتاب/تکه کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ke_mesle_ketab": {
+    "username": "ke_mesle_ketab",
+    "follower_count": 7127,
+    "media_count": 316,
+    "following_count": 579,
+    "full_name": "زینب مهرنگ|مروج کتاب|تولید محتوا",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "book_zarii": {
+    "username": "book_zarii",
+    "follower_count": 16433,
+    "media_count": 71,
+    "following_count": 404,
+    "full_name": "زهرا پناهی | مروج کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "mahi_bookworld": {
+    "username": "mahi_bookworld",
+    "follower_count": 12919,
+    "media_count": 250,
+    "following_count": 1345,
+    "full_name": "دنیای کتاب ماهی | معرفی کتاب 🐟",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "parnianbook0": {
+    "username": "parnianbook0",
+    "follower_count": 556,
+    "media_count": 31,
+    "following_count": 161,
+    "full_name": "پرنیان آرین | معرفی کتاب و موسیقی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "ayazreviews": {
+    "username": "ayazreviews",
+    "follower_count": 8679,
+    "media_count": 132,
+    "following_count": 128,
+    "full_name": "ایاز / کتاب و سینما",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "parham.hami": {
+    "username": "parham.hami",
+    "follower_count": 63833,
+    "media_count": 56,
+    "following_count": 191,
+    "full_name": "Parham Hami",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "saraybook": {
+    "username": "saraybook",
+    "follower_count": 335804,
+    "media_count": 102,
+    "following_count": 370,
+    "full_name": "سارا سیرجانی | Sara Sirjani",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "narges.book": {
+    "username": "narges.book",
+    "follower_count": 142403,
+    "media_count": 457,
+    "following_count": 86,
+    "full_name": "نرگس بلاگر کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "mohammadzaabihi": {
+    "username": "mohammadzaabihi",
+    "follower_count": 225183,
+    "media_count": 428,
+    "following_count": 211,
+    "full_name": "محمد ذبیحی | بلاگر کتاب📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "aqaye.ketab": {
+    "username": "aqaye.ketab",
+    "follower_count": 554483,
+    "media_count": 2721,
+    "following_count": 543,
+    "full_name": "آقای کتاب  | معرفی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "asma_vibe": {
+    "username": "asma_vibe",
+    "follower_count": 17864,
+    "media_count": 374,
+    "following_count": 306,
+    "full_name": "اسما | کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "raha_farbodrad": {
+    "username": "raha_farbodrad",
+    "follower_count": 20642,
+    "media_count": 187,
+    "following_count": 200,
+    "full_name": "رها فربدراد | معرفی کتاب 📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "rendtopia": {
+    "username": "rendtopia",
+    "follower_count": 101611,
+    "media_count": 235,
+    "following_count": 470,
+    "full_name": "رضا | کتاب | تفکر نقاد | آگاهی",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "maral__book": {
+    "username": "maral__book",
+    "follower_count": 3065,
+    "media_count": 79,
+    "following_count": 487,
+    "full_name": "📚معرفی کتاب📚",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "shiva_bookworm": {
+    "username": "shiva_bookworm",
+    "follower_count": 44625,
+    "media_count": 280,
+    "following_count": 407,
+    "full_name": "شیوا | راوی داستان‌ها🪄|معرفی کتاب‌📚‌و..",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "baharr.book": {
+    "username": "baharr.book",
+    "follower_count": 3898,
+    "media_count": 110,
+    "following_count": 134,
+    "full_name": "بهار",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  },
+  "my_bookly": {
+    "username": "my_bookly",
+    "follower_count": 1214,
+    "media_count": 25,
+    "following_count": 499,
+    "full_name": "بوکلی | معرفی کتاب",
+    "is_verified": false,
+    "is_private": false,
+    "success": true
+  }
+}
